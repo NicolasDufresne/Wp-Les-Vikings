@@ -178,3 +178,9 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+/**
+ * Cuztom.
+ */
+include('inc/cuztom-2.9/cuztom.php');
+
+require get_template_directory() . '/inc/cuztom/cuztom-spectacles.php';
