@@ -25,54 +25,8 @@
         </div>
     </div>
 
-    <div class="block"></div>
-    <div id="flexslider-back">
-        <div class="flexslider">
-            <ul class="slides">
-                <li>
-                    <img src="assets/img/lesVikings/web/5.JPG" alt="img-flexslider"/>
-                    <p class="flex-caption">Matériel électrique</p>
-                </li>
-                <li>
-                    <img src="assets/img/lesVikings/web/6.JPG" alt="img-flexslider"/>
-                    <p class="flex-caption">Vue de côté du plateau</p>
-                </li>
-                <li>
-                    <img src="assets/img/lesVikings/web/7.JPG" alt="img-flexslider"/>
-                    <p class="flex-caption">Passerelle</p>
-                </li>
-                <li>
-                    <img src="assets/img/lesVikings/web/8.JPG" alt="img-flexslider"/>
-                    <p class="flex-caption">Consoles son et lumières</p>
-                </li>
-                <li>
-                    <img src="assets/img/lesVikings/web/9.JPG" alt="img-flexslider"/>
-                    <p class="flex-caption">Scène modulable en cafétéria</p>
-                </li>
-                <li>
-                    <img src="assets/img/lesVikings/web/10.JPG" alt="img-flexslider"/>
-                    <p class="flex-caption">Vue du plateau depuis les passerelles</p>
-                </li>
-                <li>
-                    <img src="assets/img/lesVikings/web/11.JPG" alt="img-flexslider"/>
-                    <p class="flex-caption">Perches motorisées</p>
-                </li>
-                <li>
-                    <img src="assets/img/lesVikings/web/12.JPG" alt="img-flexslider"/>
-                    <p class="flex-caption">Sièges vus des passerelles</p>
-                </li>
-                <li>
-                    <img src="assets/img/lesVikings/web/13.JPG" alt="img-flexslider"/>
-                    <p class="flex-caption">Vue d'ensemble de la salle</p>
-                </li>
-                <li>
-                    <img src="assets/img/lesVikings/web/14.JPG" alt="img-flexslider"/>
-                    <p class="flex-caption">Le parvis</p>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <div class="block"></div>
+<?php echo do_shortcode('[smartslider3 slider="3"]');?>
+
 
     <section id="professionnel">
         <div class="wrap">

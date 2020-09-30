@@ -14,7 +14,7 @@
 <footer>
     <section id="footer">
         <div class="columns wow fadeIn" data-wow-duration="1s" data-wow-delay="0.3s">
-            <a href="http://www.yvetot.fr" onclick="window.open(this.href);return false">
+            <a href="https://www.yvetot.fr" onclick="window.open(this.href);return false">
                 <img src="<?= get_template_directory_uri() . '/assets/img/partenaires/yvetot.png'; ?>" alt="yvetot" width="300" height="60"></a>
         </div>
         <div class="columns wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
@@ -30,10 +30,8 @@
         <div class="columns wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
             <h3>Plus d'informations</h3>
             <div class="columns-info">
-                <p>Location de salle : <a href="mailto:gilles.camuset@yvetot.fr"
-                                          onclick="window.open(this.href);return false">gilles.camuset@yvetot.fr</a></p>
-                <p>Réservations et billetterie : <a href="mailto:saison.culturelle@yvetot.fr"
-                                                    onclick="window.open(this.href);return false">
+                <p>Location de salle : <a href="mailto:gilles.camuset@yvetot.fr">gilles.camuset@yvetot.fr</a></p>
+                <p>Réservations et billetterie : <a href="mailto:saison.culturelle@yvetot.fr">
                         <br/>saison.culturelle@yvetot.fr</a></p>
                 <p>Licence spectacle n°1-104 25 43 et n°3-104 25 44</p>
             </div>
@@ -53,7 +51,7 @@
         <div class="clear"></div>
         <div class="copyright">
             <p>Site réalisé en interne - contact administrateur
-                <a href="mailto:service.communication@yvetot.fr" onclick="window.open(this.href);return false">
+                <a href="mailto:service.communication@yvetot.fr">
                     service.communication@yvetot.fr</a>
             </p>
         </div>
