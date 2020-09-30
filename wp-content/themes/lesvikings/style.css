@@ -66,904 +66,1480 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
-html {
-	line-height: 1.15;
-	-webkit-text-size-adjust: 100%;
-}
+@import "reset.css";
 
-/* Sections
-	 ========================================================================== */
-
-/**
- * Remove the margin in all browsers.
- */
+html,
 body {
-	margin: 0;
-}
-
-/**
- * Render the `main` element consistently in IE.
- */
-main {
-	display: block;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    box-sizing: border-box;
+    font-family: itc-avant-garde-gothic-pro, sans-serif;
+    font-style: normal;
+    font-size: 11px;
+    scroll-behavior: smooth;
 }
 
-/**
- * Correct the font size and margin on `h1` elements within `section` and
- * `article` contexts in Chrome, Firefox, and Safari.
- */
-h1 {
-	font-size: 2em;
-	margin: 0.67em 0;
+
+@media all and (max-width: 768px) {
+    p, h3, h2, h1 {
+        padding: 10px;
+    }
+}
+
+/**********************************leaflet map*********************************/
+#mapid {
+    height: 500px;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 50px;
+    z-index: 0;
+}
+
+@media screen and (max-width: 768px) {
+    #mapid {
+        width: 90%;
+    }
+}
+
+/*************************************wrap*************************************/
+.wrap {
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.wrap-affiches {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.block {
+    width: 100%;
+    height: 10vh;
+}
+
+/*************************************isAdmin***********************************/
+.isAdmin {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.3em;
+}
+
+.isAdmin h3 {
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.isAdmin a {
+    padding: 5px;
+    margin-left: 10px;
+    text-align: center;
+}
+
+.isAdmin a:hover {
+    color: #1dcaff;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+/*************************************backToTop***********************************/
+.backToTop a {
+    position: fixed;
+    z-index: 20;
+    margin-top: 25%;
+    margin-left: 10px;
+}
+
+.backToTop a img {
+    border-radius: 50px;
+}
+
+@media all and (max-width: 768px) {
+    .backToTop a {
+        margin-top: 55%;
+    }
+
+    .backToTop a img {
+        width: 50%;
+    }
+}
+
+@media all and (max-width: 400px) {
+    .backToTop a img {
+        display: none;
+    }
+}
+
+/*************************************header***********************************/
+
+#logo {
+    text-align: center;
+    width: 20%;
+    margin-top: 30px;
+    float: left;
+}
+
+.group:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+#mainnav {
+    width: 80%;
+    float: right;
+    background-color: white;
+}
+
+#mainnav #menu {
+    display: none;
+    padding: .8em 1.5em;
+    cursor: pointer;
+}
+
+
+#mainnav ul {
+    display: block;
+    margin: 0;
+    text-align: right;
+    padding: 30px;
+}
+
+#mainnav ul li {
+    margin: 0;
+    list-style: none;
+    display: inline-block;
+    padding: 5px
+}
+
+#mainnav ul li a {
+    text-decoration: none;
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 50px;
+    padding: 20px;
+}
+
+#mainnav ul li a:after {
+    display: block;
+    content: '';
+    border-bottom: solid 2px #1dcaff;
+    transform: scaleX(0);
+    transition: transform 250ms ease-in-out;
+    width: 40px;
+    margin: 0 auto;
+    margin-top: -10px;
+}
+
+#mainnav ul li a:hover {
+    color: #1dcaff;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+#mainnav ul li a:hover:after {
+    transform: scaleX(1);
+    width: 40px;
+}
+
+#mainnav ul li a.fromLeft:after {
+    transform-origin: 0% 50%;
+}
+
+.content {
+    padding: 1.5em;
+}
+
+@media all and (max-width: 1108px) {
+    #logo {
+        width: 100%;
+    }
+
+    #menu {
+        float: right;
+        top: 0;
+    }
+
+    #mainnav {
+        width: 100%;
+    }
+
+    #mainnav #menu {
+        display: block;
+        font-size: 1.5em;
+    }
+
+    #mainnav ul {
+        display: none;
+        background-color: white;
+        padding: 1em;
+        text-align: left;
+    }
+
+    #mainnav ul li {
+        display: block;
+    }
+
+    #mainnav ul li a {
+        display: block;
+        text-align: center;
+    }
+
+}
+
+/*****************nav infos esp.Pro & infos.Pratiques**************************/
+.sticky {
+    position: fixed;
+    top: 0;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+    *-webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+.add {
+    width: 100%;
+    height: 86px;
+}
+
+.nav-infos {
+    width: 100%;
+    padding: 30px;
+    text-align: center;
+    z-index: 20;
+    background-color: white;
+}
+
+.nav-infos ul li {
+    list-style-type: none;
+    display: inline;
+}
+
+.nav-infos ul li a {
+    font-size: 1.5em;
+    text-decoration: none;
+    margin: 1%;
+}
+
+.active {
+    color: #1dcaff;
+}
+
+@media all and (max-width: 768px) {
+    .nav-infos {
+        padding: 20px;
+    }
+
+    .nav-infos ul li a {
+        font-size: 1.6em;
+    }
+}
+
+/*****************************infos-billeterie*********************************/
+
+#billeterie {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    width: 100%;
+    height: 100%;
+}
+
+#billeterie h1 {
+    text-align: center;
+    font-size: 2.5em;
+    padding-top: 25px;
+    text-transform: uppercase;
+}
+
+#billeterie h2 {
+    text-align: center;
+    padding: 20px;
+    font-size: 2em;
+}
+
+#billeterie p {
+    text-align: center;
+    font-size: 1.3em;
+}
+
+/*******************************programmation-vikings**********************************/
+
+#programmation-vikings h1 {
+    text-align: center;
+    font-size: 2.5em;
+    padding-top: 25px;
+    text-transform: uppercase;
+}
+
+#programmation-vikings {
+    text-align: center;
+}
+
+#programmation-vikings img {
+    width: 50%;
+    border: 2px solid transparent;
+}
+
+#programmation-vikings img:hover {
+    border: 2px solid #1dcaff;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+@media screen and (max-width: 768px) {
+    #programmation-vikings img {
+        width: 100%;
+    }
+}
+
+/*******************************Programmation**********************************/
+
+#programmation h1 {
+    text-align: center;
+    font-size: 2.5em;
+    padding-top: 25px;
+    text-transform: uppercase;
+}
+
+/******************************infos-modalites*********************************/
+
+#modalites {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    width: 100%;
+    height: 100%;
+    background-color: #f5f5f5;
+}
+
+#modalites h1 {
+    text-align: center;
+    font-size: 2.5em;
+    padding-top: 25px;
+    text-transform: uppercase;
+}
+
+#modalites h2 {
+    text-align: center;
+    padding: 20px;
+    font-size: 2em;
+}
+
+#modalites h3 {
+    font-size: 1.7em;
+}
+
+#modalites ul {
+    font-size: 1.3em;
+}
+
+#modalites ul {
+    padding: 10px;
+}
+
+#modalites p {
+    font-size: 1.3em;
+}
+
+/*****************************infos-stationner*********************************/
+
+#stationner {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    width: 100%;
+    height: 100%;
+}
+
+#stationner h1 {
+    text-align: center;
+    font-size: 2.5em;
+    padding-top: 25px;
+    text-transform: uppercase;
+}
+
+#stationner h2 {
+    text-align: center;
+    padding: 20px;
+    font-size: 2em;
+}
+
+#stationner ul {
+    text-align: center;
+    font-size: 1.3em;
+}
+
+#stationner ul {
+    padding: 10px;
+}
+
+/**********************************infos-venir*********************************/
+
+#venir {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    width: 100%;
+    height: 100%;
+    background-color: #f5f5f5;
+}
+
+#venir h1 {
+    text-align: center;
+    font-size: 2.5em;
+    padding-top: 25px;
+    text-transform: uppercase;
+}
+
+#venir p {
+    font-size: 1.3em;
+    text-align: center;
+}
+
+/*****************************infos-horaires*********************************/
+
+#horaires {
+    padding-top: 100px;
+    padding-bottom: 50px;
+    width: 100%;
+    height: 100%;
+}
+
+#horaires h1 {
+    text-align: center;
+    font-size: 2.5em;
+    padding-top: 25px;
+    text-transform: uppercase;
+}
+
+#horaires h2 {
+    text-align: center;
+    padding: 20px;
+    font-size: 2em;
+}
+
+#horaires ul {
+    font-size: 1.3em;
+}
+
+#horaires ul {
+    padding: 10px;
+}
+
+#horaires p {
+    font-size: 1.3em;
+}
+
+/**********************infos-attention esp.infos.Pratique**********************/
+#infos {
+    padding-bottom: 100px;
+    width: 100%;
+    height: 100%;
+}
+
+#infos h1 {
+    text-align: center;
+    font-size: 2em;
+    padding-top: 25px;
+    text-transform: uppercase;
+}
+
+#infos h2 {
+    text-align: center;
+    padding: 20px;
+    font-size: 2em;
+}
+
+#infos ul {
+    font-size: 1.3em;
+}
+
+#infos ul {
+    padding: 10px;
+}
+
+#infos p {
+    font-size: 1.3em;
+}
+
+
+/******************************parallax****************************************/
+#parallax-world-of-ugg .parallax-one {
+    padding-top: 250px;
+    padding-bottom: 250px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    background-image: url("../img/lesVikings/web/1bis.JPG");
+    background-attachment: fixed;
+    background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+
+#parallax-world-of-ugg .parallax-two {
+    padding-top: 250px;
+    padding-bottom: 250px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    background-image: url("../img/lesVikings/web/2bis.JPG");
+    background-attachment: fixed;
+    background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+
+#parallax-world-of-ugg .parallax-three {
+    padding-top: 250px;
+    padding-bottom: 250px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    background-image: url("../img/lesVikings/web/3bis.JPG");
+    background-attachment: fixed;
+    background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+}
+
+#parallax-world-of-ugg .parallax-four {
+    padding-top: 250px;
+    padding-bottom: 250px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    background-image: url("../img/lesVikings/web/4bis.JPG");
+    background-attachment: fixed;
+    background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+}
+
+#parallax-world-of-ugg h2 {
+    width: 100%;
+    font-size: 75px;
+    letter-spacing: 10px;
+    text-align: center;
+    line-height: 80px;
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    z-index: 10;
+    opacity: 0.9;
+}
+
+
+#parallax-world-of-ugg p {
+    font-size: 20px;
+    letter-spacing: 10px;
+    text-align: center;
+    line-height: 80px;
+    color: white;
+    font-weight: 400;
+    text-transform: uppercase;
+    z-index: 10;
+    opacity: 0.9;
+    width: 100%;
+}
+
+@media screen and (max-width: 1050px) {
+    #affiche-detail {
+        padding: 50px;
+        margin-top: 0;
+    }
+
+    #parallax-world-of-ugg h2 {
+        font-size: 48px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #parallax-world-of-ugg h2 {
+        font-size: 25px;
+        margin-top: 0;
+        width: 100%;
+    }
+
+    #parallax-world-of-ugg .parallax-one,
+    #parallax-world-of-ugg .parallax-two {
+        padding-top: 100px;
+        padding-bottom: 100px;
+        background-position: initial;
+    }
+
+    #parallax-world-of-ugg .parallax-three,
+    #parallax-world-of-ugg .parallax-four {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+
+    #affiche-detail {
+        padding: 0;
+        margin-top: 0;
+    }
+}
+
+@media screen and (max-width: 479px) {
+
+    #parallax-world-of-ugg .block {
+        padding: 30px 15px;
+        width: 290px;
+    }
+
+    #parallax-world-of-ugg p {
+        font-size: 20px;
+        letter-spacing: 10px;
+        text-align: center;
+        line-height: 80px;
+        color: white;
+        font-weight: 400;
+        text-transform: uppercase;
+        z-index: 10;
+        opacity: 0.9;
+        width: 100%;
+    }
+}
+
+/**********************facebook Instagram Twitter******************************/
+.social {
+    width: 100%;
+    height: 30px;
+    background-color: #333;
+}
+
+.social ul {
+    float: right;
+}
+
+.social ul li {
+    float: left;
+}
+
+.social ul li a {
+    color: #A9A9A9;
+    line-height: 33px;
+    margin-right: 20px;
+    height: 100%;
+    font-size: 12px;
+}
+
+.social ul li a img {
+    float: left;
+    margin-right: 5px;
+    margin-top: 5px;
+}
+
+@media screen and (max-width: 768px) {
+    .columns {
+        padding: 20px;
+        width: 100%;
+    }
+}
+
+/********************************Footer****************************************/
+#footer {
+    vertical-align: baseline;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    background-color: #111;
+    bottom: 0;
+    color: white;
+    font-size: 1.2em;
+    z-index: 10;
+    line-height: 15px;
+}
+
+.columns {
+    padding: 50px;
+    width: 25%;
+    float: left;
+    height: 100%;
+    font-size: 1em;
+    text-align: center;
+    line-height: 25px;
+}
+
+.columns img {
+    width: 200px;
+    height: 80px;
+}
+
+.columns a {
+    text-decoration: none;
+    color: white;
+}
+
+.columns a:hover {
+    color: #1dcaff;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+.columns h3 {
+    font-size: 1.5em;
+    text-align: center;
+    color: grey;
+}
+
+
+.address p {
+    font-weight: bold;
+}
+
+.copyright {
+    font-size: 1em;
+    color: white;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    background-color: black;
+}
+
+.copyright a {
+    text-decoration: none;
+    color: white;
+}
+
+.copyright a:hover {
+    color: #1dcaff;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+@media screen and (max-width: 768px) {
+    .columns {
+        padding: 20px;
+        width: 100%;
+    }
+}
+
+/*****************************programme accueil********************************/
+.programme-accueil h1 {
+    text-align: center;
+    font-size: 2.5em;
+    padding-top: 25px;
+    text-transform: uppercase;
+}
+
+.form-affiche {
+    background-color: #F5F5F5;
+}
+
+.affiches {
+    float: left;
+    width: 25%;
+    text-align: center;
+}
+
+.infos-affiches-accueil {
+    width: 100%;
+    height: 150px;
+}
+
+.affiches img {
+    -webkit-box-shadow: 0px 0px 38px -2px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 0px 0px 38px -2px rgba(0, 0, 0, 1);
+    box-shadow: 0px 0px 38px -2px rgba(0, 0, 0, 1);
+}
+
+.affiches img:hover {
+    transform: scale(1.04);
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.affiches h2 {
+    font-size: 1.7em;
+    padding: 4%;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 20px;
+}
+
+.affiches p {
+    color: grey;
+}
+
+.affiches h3 {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.affiches .dates {
+    text-align: center;
+    font-size: 1.3em;
+}
+
+@media screen and (max-width: 768px) {
+    .affiches {
+        float: none;
+        width: 100%;
+    }
+
+    .affiches h2 {
+        padding: 5px;
+    }
+
+}
+
+/*******************************partenaires*************************************/
+#partenaires {
+    background-color: #f5f5f5;
+    padding: 50px;
+}
+
+#partenaires h1 {
+    text-align: center;
+    font-size: 2.5em;
+    padding-top: 25px;
+    text-transform: uppercase;
+}
+
+#partenaires li a {
+    width: 20%;
+    margin: 10px;
+    min-width: 170px;
+    float: left;
+    display: inline-block;
+    height: 100px;
+    opacity: 0.7;
+    overflow: hidden;
+    line-height: 150px;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    vertical-align: middle;
+    -webkit-transition: opacity .15s ease;
+    transition: opacity .15s ease;
+    margin: 20px;
+}
+
+#partenaires li a:hover {
+    opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+    #partenaires li a {
+        float: none;
+        width: 100%;
+        margin: 0 auto;
+        margin-top: 10px;
+    }
+}
+
+/****************************equipe contact************************************/
+#equipe h1 {
+    text-align: center;
+    font-size: 2.5em;
+    padding-top: 25px;
+    text-transform: uppercase;
+}
+
+.personnel {
+    width: 45%;
+    text-align: center;
+    display: inline-block;
+    height: 110px;
+    overflow: hidden;
+    margin: 1em;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    vertical-align: middle;
+    -webkit-transition: opacity .15s ease;
+    transition: opacity .15s ease;
+    font-size: 1.5em;
+}
+
+#form-contact {
+    margin-bottom: 150px;
+    margin-top: 150px;
+    width: 40%;
+}
+
+@media screen and (max-width: 768px) {
+    .personnel {
+        float: none;
+        width: 100%;
+        margin: 0;
+        height: auto;
+        padding-bottom: 75px;
+    }
+
+    #form-contact {
+        width: 90%;
+    }
 }
 
-/* Grouping content
-	 ========================================================================== */
+/*******************************professionnel***********************************/
+#professionnel {
+    padding-bottom: 120px;
+    width: 100%;
+    height: 100%;
+    padding-top: 100px;
+    background-color: #f5f5f5;
+}
+
+#professionnel h2 {
+    text-align: center;
+    font-size: 2.5em;
+    padding-top: 25px;
+    text-transform: uppercase;
+    padding-bottom: 100px;
+}
+
+#professionnel p {
+    font-size: 1.3em;
+}
 
-/**
- * 1. Add the correct box sizing in Firefox.
- * 2. Show the overflow in Edge and IE.
- */
-hr {
-	box-sizing: content-box;
-	height: 0;
-	overflow: visible;
-}
-
-/**
- * 1. Correct the inheritance and scaling of font size in all browsers.
- * 2. Correct the odd `em` font sizing in all browsers.
- */
-pre {
-	font-family: monospace, monospace;
-	font-size: 1em;
-}
-
-/* Text-level semantics
-	 ========================================================================== */
-
-/**
- * Remove the gray background on active links in IE 10.
- */
-a {
-	background-color: transparent;
-}
-
-/**
- * 1. Remove the bottom border in Chrome 57-
- * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
- */
-abbr[title] {
-	border-bottom: none;
-	text-decoration: underline;
-	text-decoration: underline dotted;
-}
-
-/**
- * Add the correct font weight in Chrome, Edge, and Safari.
- */
-b,
-strong {
-	font-weight: bolder;
-}
-
-/**
- * 1. Correct the inheritance and scaling of font size in all browsers.
- * 2. Correct the odd `em` font sizing in all browsers.
- */
-code,
-kbd,
-samp {
-	font-family: monospace, monospace;
-	font-size: 1em;
-}
-
-/**
- * Add the correct font size in all browsers.
- */
-small {
-	font-size: 80%;
-}
-
-/**
- * Prevent `sub` and `sup` elements from affecting the line height in
- * all browsers.
- */
-sub,
-sup {
-	font-size: 75%;
-	line-height: 0;
-	position: relative;
-	vertical-align: baseline;
-}
-
-sub {
-	bottom: -0.25em;
-}
-
-sup {
-	top: -0.5em;
-}
-
-/* Embedded content
-	 ========================================================================== */
-
-/**
- * Remove the border on images inside links in IE 10.
- */
-img {
-	border-style: none;
-}
-
-/* Forms
-	 ========================================================================== */
-
-/**
- * 1. Change the font styles in all browsers.
- * 2. Remove the margin in Firefox and Safari.
- */
-button,
-input,
-optgroup,
-select,
-textarea {
-	font-family: inherit;
-	font-size: 100%;
-	line-height: 1.15;
-	margin: 0;
-}
-
-/**
- * Show the overflow in IE.
- * 1. Show the overflow in Edge.
- */
-button,
-input {
-	overflow: visible;
-}
-
-/**
- * Remove the inheritance of text transform in Edge, Firefox, and IE.
- * 1. Remove the inheritance of text transform in Firefox.
- */
-button,
-select {
-	text-transform: none;
-}
-
-/**
- * Correct the inability to style clickable types in iOS and Safari.
- */
-button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
-	-webkit-appearance: button;
-}
-
-/**
- * Remove the inner border and padding in Firefox.
- */
-button::-moz-focus-inner,
-[type="button"]::-moz-focus-inner,
-[type="reset"]::-moz-focus-inner,
-[type="submit"]::-moz-focus-inner {
-	border-style: none;
-	padding: 0;
-}
-
-/**
- * Restore the focus styles unset by the previous rule.
- */
-button:-moz-focusring,
-[type="button"]:-moz-focusring,
-[type="reset"]:-moz-focusring,
-[type="submit"]:-moz-focusring {
-	outline: 1px dotted ButtonText;
-}
-
-/**
- * Correct the padding in Firefox.
- */
-fieldset {
-	padding: 0.35em 0.75em 0.625em;
-}
-
-/**
- * 1. Correct the text wrapping in Edge and IE.
- * 2. Correct the color inheritance from `fieldset` elements in IE.
- * 3. Remove the padding so developers are not caught out when they zero out
- *		`fieldset` elements in all browsers.
- */
-legend {
-	box-sizing: border-box;
-	color: inherit;
-	display: table;
-	max-width: 100%;
-	padding: 0;
-	white-space: normal;
-}
-
-/**
- * Add the correct vertical alignment in Chrome, Firefox, and Opera.
- */
-progress {
-	vertical-align: baseline;
-}
+@media screen and (max-width: 768px) {
+    .text2 {
+        width: 200px;
+    }
+}
 
-/**
- * Remove the default vertical scrollbar in IE 10+.
- */
-textarea {
-	overflow: auto;
-}
-
-/**
- * 1. Add the correct box sizing in IE 10.
- * 2. Remove the padding in IE 10.
- */
-[type="checkbox"],
-[type="radio"] {
-	box-sizing: border-box;
-	padding: 0;
-}
-
-/**
- * Correct the cursor style of increment and decrement buttons in Chrome.
- */
-[type="number"]::-webkit-inner-spin-button,
-[type="number"]::-webkit-outer-spin-button {
-	height: auto;
-}
-
-/**
- * 1. Correct the odd appearance in Chrome and Safari.
- * 2. Correct the outline style in Safari.
- */
-[type="search"] {
-	-webkit-appearance: textfield;
-	outline-offset: -2px;
-}
-
-/**
- * Remove the inner padding in Chrome and Safari on macOS.
- */
-[type="search"]::-webkit-search-decoration {
-	-webkit-appearance: none;
-}
-
-/**
- * 1. Correct the inability to style clickable types in iOS and Safari.
- * 2. Change font properties to `inherit` in Safari.
- */
-::-webkit-file-upload-button {
-	-webkit-appearance: button;
-	font: inherit;
+/*******************************livret*******************************************/
+#livret {
+    text-align: center;
 }
 
-/* Interactive
-	 ========================================================================== */
-
-/*
- * Add the correct display in Edge, IE 10+, and Firefox.
- */
-details {
-	display: block;
+#livret img {
+    width: 66.666%;
+    border: 2px solid transparent;
 }
 
-/*
- * Add the correct display in all browsers.
- */
-summary {
-	display: list-item;
+#livret img:hover {
+    border: 2px solid #1dcaff;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
 }
 
-/* Misc
-	 ========================================================================== */
+@media screen and (max-width: 768px) {
+    #livret img {
+        width: 100%;
+    }
+}
 
-/**
- * Add the correct display in IE 10+.
- */
-template {
-	display: none;
+/*******************************Plan esp.Pro************************************/
+#plan h1 {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 2.5em;
+    padding-top: 25px;
+    text-transform: uppercase;
+    padding-bottom: 20px;
 }
 
-/**
- * Add the correct display in IE 10.
- */
-[hidden] {
-	display: none;
+#listeMateriel h1 {
+    margin-top: 100px;
+    text-align: center;
+    font-size: 2.5em;
+    padding-top: 25px;
+    text-transform: uppercase;
+    padding-bottom: 20px;
 }
 
-/* Box sizing
---------------------------------------------- */
+.container {
+    width: 50%;
+    float: left;
+}
 
-/* Inherit box-sizing to more easily change it's value on a component level.
-@link http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
-*,
-*::before,
-*::after {
-	box-sizing: inherit;
+.container img {
+    border: 2px solid transparent;
 }
 
-html {
-	box-sizing: border-box;
+.container img:hover {
+    border: 2px solid #1dcaff;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
 }
 
-/*--------------------------------------------------------------
-# Base
---------------------------------------------------------------*/
+.container-materiels {
+    margin: 0 auto;
+    width: 50%;
+}
 
-/* Typography
---------------------------------------------- */
-body,
-button,
-input,
-select,
-optgroup,
-textarea {
-	color: #404040;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-	font-size: 1rem;
-	line-height: 1.5;
+.container-materiels img {
+    border: 2px solid transparent;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	clear: both;
+.container-materiels img:hover {
+    border: 2px solid #1dcaff;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
 }
 
-p {
-	margin-bottom: 1.5em;
+@media screen and (max-width: 414px) {
+    .container {
+        width: 100%;
+        float: none;
+    }
+
+    .container-materiels {
+        margin: 0 auto;
+        width: 100%;
+    }
 }
 
-dfn,
-cite,
-em,
-i {
-	font-style: italic;
+/***************************details des affiches********************************/
+#dashboard {
+    margin-bottom: 10vh;
 }
 
-blockquote {
-	margin: 0 1.5em;
+#edit-password {
+    margin-bottom: 20vh;
 }
 
-address {
-	margin: 0 0 1.5em;
+#forgotPassword {
+    margin-bottom: 22vh;
 }
 
-pre {
-	background: #eee;
-	font-family: "Courier 10 Pitch", courier, monospace;
-	line-height: 1.6;
-	margin-bottom: 1.6em;
-	max-width: 100%;
-	overflow: auto;
-	padding: 1.6em;
+#inscription {
+    margin-bottom: 15vh;
 }
 
-code,
-kbd,
-tt,
-var {
-	font-family: monaco, consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+#affiche-detail {
+    margin-top: 10vh;
 }
 
-abbr,
-acronym {
-	border-bottom: 1px dotted #666;
-	cursor: help;
+.categorie p {
+    font-size: 1.5em;
+    font-style: italic;
 }
 
-mark,
-ins {
-	background: #fff9c0;
-	text-decoration: none;
+.tel {
+    font-size: 1.5em;
 }
 
-big {
-	font-size: 125%;
+.infos-affiches {
+    width: 20%;
+    float: right;
+    text-align: left;
+    padding-left: 50px;
 }
 
-/* Elements
---------------------------------------------- */
-body {
-	background: #fff;
+#affiche-detail img {
+    float: left;
+    width: 30%;
 }
 
-hr {
-	background-color: #ccc;
-	border: 0;
-	height: 1px;
-	margin-bottom: 1.5em;
+.infos-affiches h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: left;
+    text-transform: uppercase;
 }
+
+.infos-affiches p {
+    font-size: 1.5em;
 
-ul,
-ol {
-	margin: 0 0 1.5em 3em;
 }
 
-ul {
-	list-style: disc;
+.infos-affiches a {
+    padding-top: 20px;
+    font-size: 1.5em;
+    color: black;
 }
 
-ol {
-	list-style: decimal;
+.infos-affiches a:hover {
+    color: #1dcaff;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
 }
 
-li > ul,
-li > ol {
-	margin-bottom: 0;
-	margin-left: 1.5em;
+.description {
+    width: 50%;
+    float: left;
+    padding-left: 50px;
+
 }
 
-dt {
-	font-weight: 700;
+.description h2 {
+    font-size: 2.5em;
+    color: white;
+    text-align: center;
+    text-align: center;
+    text-transform: uppercase;
 }
 
-dd {
-	margin: 0 1.5em 1.5em;
+.description h3 {
+    font-size: 2em;
+    font-weight: bold;
 }
 
-/* Make sure embeds and iframes fit their containers. */
-embed,
-iframe,
-object {
-	max-width: 100%;
+.descriptionDate {
+    font-size: 1.5em;
 }
 
-img {
-	height: auto;
-	max-width: 100%;
+.txt {
+    margin-top: 50px;
+    padding-top: 50px;
+    font-size: 1.4em;
+    border-top: solid 2px #3da5dd;
+    text-align: justify;
+    font-size: 1.5em;
 }
+
+@media screen and (max-width: 768px) {
+    .infos-affiches {
+        float: none;
+        width: 100%;
+        text-align: center;
+        padding-left: 0;
+    }
 
-figure {
-	margin: 1em 0;
+    .description h2 {
+        font-size: 1.8em
+    }
+
+    #affiche-detail img {
+        width: 40%;
+        float: none;
+        margin: 0 auto;
+        margin-left: 30%;
+    }
+
+    .description {
+        float: none;
+        width: 100%;
+        padding-left: 0;
+        padding-bottom: 0;
+        text-align: center;
+    }
+
+    .infos-affiches h2 {
+        text-align: center;
+    }
 }
 
-table {
-	margin: 0 0 1.5em;
-	width: 100%;
+@media screen and (max-width: 414px) {
+    #affiche-detail img {
+        width: 80%;
+        float: none;
+        margin: 0 auto;
+        margin-left: 10%;
+    }
+
+    .txt {
+        width: 100%;
+    }
 }
 
-/* Links
---------------------------------------------- */
-a {
-	color: #4169e1;
+/*********************************form-global**************************************/
+.contact-fond {
+    background-image: url("../img/lesVikings/web/15.JPG");
+    width: 100%;
+    background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
-a:visited {
-	color: #800080;
+.contact-fond-hachure {
+    background-image: url("../img/lesVikings/web/hachures.png");
+    padding: 20px;
+    width: 100%;
+    background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
-a:hover,
-a:focus,
-a:active {
-	color: #191970;
+@media screen and (max-width: 768px) {
+    .contact-fond-hachure {
+        padding: 20px;
+        width: 100%;
+    }
 }
 
-a:focus {
-	outline: thin dotted;
+#form-global h1 {
+    text-align: center;
+    font-size: 2em;
 }
 
-a:hover,
-a:active {
-	outline: 0;
+#form-global h2 {
+    text-align: center;
+    font-size: 2em;
 }
 
-/* Forms
---------------------------------------------- */
-button,
-input[type="button"],
-input[type="reset"],
-input[type="submit"] {
-	border: 1px solid;
-	border-color: #ccc #ccc #bbb;
-	border-radius: 3px;
-	background: #e6e6e6;
-	color: rgba(0, 0, 0, 0.8);
-	line-height: 1;
-	padding: 0.6em 1em 0.4em;
+.form-login {
+    padding-bottom: 20vh;
 }
+
+.main-form h2 {
+    text-align: center;
+    font-size: 2em;
+    padding-bottom: 20px;
 
-button:hover,
-input[type="button"]:hover,
-input[type="reset"]:hover,
-input[type="submit"]:hover {
-	border-color: #ccc #bbb #aaa;
+    font-weight: bold;
+    letter-spacing: 2px;
 }
 
-button:active,
-button:focus,
-input[type="button"]:active,
-input[type="button"]:focus,
-input[type="reset"]:active,
-input[type="reset"]:focus,
-input[type="submit"]:active,
-input[type="submit"]:focus {
-	border-color: #aaa #bbb #bbb;
+.main-form button {
+    margin: 0 auto;
 }
 
 input[type="text"],
-input[type="email"],
-input[type="url"],
 input[type="password"],
-input[type="search"],
-input[type="number"],
-input[type="tel"],
-input[type="range"],
-input[type="date"],
-input[type="month"],
-input[type="week"],
-input[type="time"],
-input[type="datetime"],
 input[type="datetime-local"],
-input[type="color"],
-textarea {
-	color: #666;
-	border: 1px solid #ccc;
-	border-radius: 3px;
-	padding: 3px;
-}
-
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="url"]:focus,
-input[type="password"]:focus,
-input[type="search"]:focus,
-input[type="number"]:focus,
-input[type="tel"]:focus,
-input[type="range"]:focus,
-input[type="date"]:focus,
-input[type="month"]:focus,
-input[type="week"]:focus,
-input[type="time"]:focus,
-input[type="datetime"]:focus,
-input[type="datetime-local"]:focus,
-input[type="color"]:focus,
-textarea:focus {
-	color: #111;
-}
-
+input[type="url"],
+input[type="time"],
+input[type="date"],
+input[type="tel"],
+input[type="email"],
 select {
-	border: 1px solid #ccc;
+    background: #EAE6E1;
+    border: 0;
+    padding: 10px;
+    border-radius: 3px;
+    width: 100%;
+    margin: 5px 0;
+    outline: medium none;
+    color: #838383;
+    border: solid 2px transparent;
+}
+
+input:focus,
+textarea:focus {
+    border: solid 2px #1dcaff;
 }
 
 textarea {
-	width: 100%;
+    background: #EAE6E1;
+    border: 0;
+    padding: 10px;
+    border-radius: 3px;
+    width: 100%;
+    margin: 5px 0;
+    outline: medium none;
+    color: #838383;
+    resize: vertical;
+    line-height: 1.5;
+    border: solid 2px transparent;
 }
 
-/*--------------------------------------------------------------
-# Layouts
---------------------------------------------------------------*/
-
-/*--------------------------------------------------------------
-# Components
---------------------------------------------------------------*/
-
-/* Navigation
---------------------------------------------- */
-.main-navigation {
-	display: block;
-	width: 100%;
+.main-form input[type="submit"] {
+    display: block;
+    padding: 10px;
+    background: #1dcaff;
+    border: 0;
+    border-radius: 3px;
+    font-weight: bold;
+    width: 100%;
+    color: #fff;
+    cursor: pointer;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    margin-top: 20px;
 }
 
-.main-navigation ul {
-	display: none;
-	list-style: none;
-	margin: 0;
-	padding-left: 0;
+.input-bttn input[type="submit"] {
+    display: block;
+    padding: 5px;
+    background: #1dcaff;
+    border: 0;
+    border-radius: 3px;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    margin-top: 20px;
 }
 
-.main-navigation ul ul {
-	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-	float: left;
-	position: absolute;
-	top: 100%;
-	left: -999em;
-	z-index: 99999;
+.input-bbtn {
+    display: block;
+    padding: 10px;
+    background: #1dcaff;
+    border: 0;
+    border-radius: 3px;
+    font-weight: bold;
+    width: 50%;
+    color: #fff;
+    cursor: pointer;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    margin-top: 20px;
 }
 
-.main-navigation ul ul ul {
-	left: -999em;
-	top: 0;
+.main-form input[type="submit"]:hover {
+    background: #1ab5e5;
+    cursor: pointer;
+
 }
 
-.main-navigation ul ul li:hover > ul,
-.main-navigation ul ul li.focus > ul {
-	display: block;
-	left: auto;
+.main-form {
+    width: 33.33%;
+    margin: 0 auto;
+    padding: 50px;
+    border: 1px solid #DDD;
+    background: #fff;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    margin-top: 20px;
+    margin-bottom: 20x;
 }
 
-.main-navigation ul ul a {
-	width: 200px;
+.main-form > label {
+    display: block;
+    margin: 10px 0 15px;
+    line-height: 15px;
 }
 
-.main-navigation ul li:hover > ul,
-.main-navigation ul li.focus > ul {
-	left: auto;
+a {
+    color: #666;
+    text-decoration: none;
 }
 
-.main-navigation li {
-	position: relative;
+a:hover {
+    color: #1dcaff;
+    text-decoration: none;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
 }
 
-.main-navigation a {
-	display: block;
-	text-decoration: none;
+.main-form > a {
+    font-size: 11px;
+    display: block;
+    text-align: center;
+    margin: 10px 0;
 }
 
-/* Small menu. */
-.menu-toggle,
-.main-navigation.toggled ul {
-	display: block;
+label {
+    font-size: 1.2em;
 }
 
-@media screen and (min-width: 37.5em) {
-
-	.menu-toggle {
-		display: none;
-	}
-
-	.main-navigation ul {
-		display: flex;
-	}
+@media screen and (max-width: 1100px) {
+    .main-form {
+        width: 90%;
+        padding: 20px;
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        transition: all 0.3s;
+    }
 }
 
-.site-main .comment-navigation,
-.site-main
-.posts-navigation,
-.site-main
-.post-navigation {
-	margin: 0 0 1.5em;
+/*********************************404**************************************/
+.error h1 {
+    height: 40vh;
+    text-align: center;
+    font-size: 3em;
+    font-weight: bold;
+    margin-top: 150px;
 }
 
-.comment-navigation .nav-links,
-.posts-navigation .nav-links,
-.post-navigation .nav-links {
-	display: flex;
+/*********************************tableau**************************************/
+#tableau {
+    margin-top: 10vh;
+    margin-bottom: 22vh;
+
 }
 
-.comment-navigation .nav-previous,
-.posts-navigation .nav-previous,
-.post-navigation .nav-previous {
-	flex: 1 0 50%;
+#tableau h2 {
+    text-align: center;
+    font-size: 2em;
+    padding-bottom: 20px;
+    font-weight: bold;
+    letter-spacing: 2px;
 }
 
-.comment-navigation .nav-next,
-.posts-navigation .nav-next,
-.post-navigation .nav-next {
-	text-align: end;
-	flex: 1 0 50%;
+#tableau th {
+    color: white;
+    font-size: 1.5em;
+    letter-spacing: 2px;
+    background-color: #222;
 }
 
-/* Posts and pages
---------------------------------------------- */
-.sticky {
-	display: block;
+#tableau input {
+    background: #EAE6E1;
+    border: 0;
+    padding: 10px;
+    width: 100%;
+    outline: medium none;
+    color: #838383;
 }
 
-.post,
-.page {
-	margin: 0 0 1.5em;
+#tableau input:hover {
+    cursor: pointer;
+    color: black;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
 }
 
-.updated:not(.published) {
-	display: none;
+table, td, th {
+    border: 1px solid #ddd;
+    text-align: center;
+    font-size: 1.1em;
+    padding: 15px;
 }
 
-.page-content,
-.entry-content,
-.entry-summary {
-	margin: 1.5em 0 0;
+table {
+    border-collapse: collapse;
+    width: 100%;
 }
 
-.page-links {
-	clear: both;
-	margin: 0 0 1.5em;
+th {
+    height: 50px;
 }
 
-/* Comments
---------------------------------------------- */
-.comment-content a {
-	word-wrap: break-word;
+.p {
+    background-color: #1dcaff;
+    color: white;
+    padding: 7px 0 7px 7px;
+    border-radius: 5px;
 }
 
-.bypostauthor {
-	display: block;
+/*****************************mentions-legales**********************************/
+#metions-legales h1 {
+    text-align: center;
+    font-size: 2.5em;
+    padding-top: 25px;
+    text-transform: uppercase;
+    padding: 10px;
 }
 
-/* Widgets
---------------------------------------------- */
-.widget {
-	margin: 0 0 1.5em;
+#metions-legales h2 {
+    text-align: center;
+    font-size: 15px;
+    text-transform: uppercase;
+    color: #666;
+    padding: 10px;
 }
 
-.widget select {
-	max-width: 100%;
+#metions-legales p {
+    text-align: center;
+    padding: 10px;
+    font-size: 15px;
 }
 
-/* Media
---------------------------------------------- */
-.page-content .wp-smiley,
-.entry-content .wp-smiley,
-.comment-content .wp-smiley {
-	border: none;
-	margin-bottom: 0;
-	margin-top: 0;
-	padding: 0;
+#metions-legales address {
+    text-align: center;
+    font-size: 15px;
+    padding: 5px;
 }
 
-/* Make sure logo link wraps around logo image. */
-.custom-logo-link {
-	display: inline-block;
-}
-
-/* Captions
---------------------------------------------- */
-.wp-caption {
-	margin-bottom: 1.5em;
-	max-width: 100%;
-}
-
-.wp-caption img[class*="wp-image-"] {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-.wp-caption .wp-caption-text {
-	margin: 0.8075em 0;
-}
-
-.wp-caption-text {
-	text-align: center;
-}
-
-/* Galleries
---------------------------------------------- */
-.gallery {
-	margin-bottom: 1.5em;
-	display: grid;
-	grid-gap: 1.5em;
-}
-
-.gallery-item {
-	display: inline-block;
-	text-align: center;
-	width: 100%;
-}
-
-.gallery-columns-2 {
-	grid-template-columns: repeat(2, 1fr);
-}
-
-.gallery-columns-3 {
-	grid-template-columns: repeat(3, 1fr);
-}
-
-.gallery-columns-4 {
-	grid-template-columns: repeat(4, 1fr);
-}
-
-.gallery-columns-5 {
-	grid-template-columns: repeat(5, 1fr);
-}
-
-.gallery-columns-6 {
-	grid-template-columns: repeat(6, 1fr);
-}
-
-.gallery-columns-7 {
-	grid-template-columns: repeat(7, 1fr);
-}
-
-.gallery-columns-8 {
-	grid-template-columns: repeat(8, 1fr);
-}
-
-.gallery-columns-9 {
-	grid-template-columns: repeat(9, 1fr);
-}
-
-.gallery-caption {
-	display: block;
-}
-
-/*--------------------------------------------------------------
-# Plugins
---------------------------------------------------------------*/
-
-/* Jetpack infinite scroll
---------------------------------------------- */
-
-/* Hide the Posts Navigation and the Footer when Infinite Scroll is in use. */
-.infinite-scroll .posts-navigation,
-.infinite-scroll.neverending .site-footer {
-	display: none;
-}
-
-/* Re-display the Theme Footer when Infinite Scroll has reached its end. */
-.infinity-end.neverending .site-footer {
-	display: block;
-}
-
-/*--------------------------------------------------------------
-# Utilities
---------------------------------------------------------------*/
-
-/* Accessibility
---------------------------------------------- */
-
-/* Text meant only for screen readers. */
-.screen-reader-text {
-	border: 0;
-	clip: rect(1px, 1px, 1px, 1px);
-	clip-path: inset(50%);
-	height: 1px;
-	margin: -1px;
-	overflow: hidden;
-	padding: 0;
-	position: absolute !important;
-	width: 1px;
-	word-wrap: normal !important;
-}
-
-.screen-reader-text:focus {
-	background-color: #f1f1f1;
-	border-radius: 3px;
-	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
-	clip: auto !important;
-	clip-path: none;
-	color: #21759b;
-	display: block;
-	font-size: 0.875rem;
-	font-weight: 700;
-	height: auto;
-	left: 5px;
-	line-height: normal;
-	padding: 15px 23px 14px;
-	text-decoration: none;
-	top: 5px;
-	width: auto;
-	z-index: 100000;
-}
-
-/* Do not show the outline on the skip link target. */
-#primary[tabindex="-1"]:focus {
-	outline: 0;
-}
-
-/* Alignments
---------------------------------------------- */
-.alignleft {
-
-	/*rtl:ignore*/
-	float: left;
-
-	/*rtl:ignore*/
-	margin-right: 1.5em;
-	margin-bottom: 1.5em;
-}
-
-.alignright {
-
-	/*rtl:ignore*/
-	float: right;
-
-	/*rtl:ignore*/
-	margin-left: 1.5em;
-	margin-bottom: 1.5em;
-}
-
-.aligncenter {
-	clear: both;
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	margin-bottom: 1.5em;
+/*SPECIAL EVENT*/
+.important {
+    text-align: center;
+    font-size: 2rem;
+    color: red;
+    padding: 50px;
 }
