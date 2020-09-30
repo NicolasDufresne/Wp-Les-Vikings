@@ -46,7 +46,7 @@
 
         <div id="livret">
             <div class="wrap">
-                <a href="assets/img/professionnel/LivretAccueil-EspaceLesVikings.pdf" target="_blank">
+                <a href="http://localhost/lesvikings-yvetot/wp-content/uploads/2020/09/LivretAccueil-EspaceLesVikings.pdf" target="_blank">
                     <img src="<?= get_template_directory_uri() . '/assets/img/technique/livret.png'; ?>" alt="livret-technique"/>
                 </a>
             </div>
@@ -61,7 +61,7 @@
                 <div class="container">
                     <h1>Plan de la salle</h1>
                     <div class="middle">
-                        <a href="assets/img/professionnel/PlanSalle-EspaceLesVikings.pdf"
+                        <a href="http://localhost/lesvikings-yvetot/wp-content/uploads/2020/09/PlanSalle-EspaceLesVikings.pdf"
                            onclick="window.open(this.href);return false">
                             <img src="<?= get_template_directory_uri() . '/assets/img/technique/planSalle.png'; ?>" alt="planSalle" class="image" style="width:100%">
                         </a>
@@ -71,7 +71,7 @@
                 <div class="container">
                     <h1>Plan des perches</h1>
                     <div class="middle">
-                        <a href="assets/img/professionnel/PlanPerches-EspaceLesVikings.pdf"
+                        <a href="http://localhost/lesvikings-yvetot/wp-content/uploads/2020/09/PlanPerches-EspaceLesVikings.pdf"
                            onclick="window.open(this.href);return false">
                             <img src="<?= get_template_directory_uri() . '/assets/img/technique/planPerches.png'; ?>" alt="planPerches" class="image" style="width:100%">
                         </a>
@@ -83,7 +83,7 @@
                 <h1>Liste du matériel</h1>
                 <div class="container-materiels">
                     <div class="middle">
-                        <a href="assets/img/professionnel/ListeMateriel-EspaceLesVikings.pdf" target="_blank">
+                        <a href="http://localhost/lesvikings-yvetot/wp-content/uploads/2020/09/ListeMateriel-EspaceLesVikings.pdf" target="_blank">
                             <img src="<?= get_template_directory_uri() . '/assets/img/technique/materiels.png'; ?>" alt="planPateriels" class="image" style="width:100%">
                         </a>
                     </div>

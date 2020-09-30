@@ -40,7 +40,7 @@
         <div class="columns wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
             <h3>Navigation</h3>
             <ul>
-                <li><a href="index.php">Accueil</a></li>
+                <li><a href="<?= esc_url(home_url('/')); ?>">Accueil</a></li>
                 <li><a href="<?= esc_url(home_url('informations-pratiques')); ?>">Informations pratiques</a></li>
                 <li><a href="<?= esc_url(home_url('espace-professionnel')); ?>">Espace professionnel</a></li>
                 <li><a href="<?= esc_url(home_url('nous-contacter')); ?>">Nous contacter</a></li>

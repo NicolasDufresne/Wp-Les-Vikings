@@ -57,10 +57,10 @@
     <div class="social">
         <ul>
             <li class="wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.4s"><a
-                        href="https://www.facebook.com/ECLesVikingsYvetot/"
+                        href="https://www.instagram.com/villeyvetot/?hl=fr"
                         onclick="window.open(this.href);return false"><img
-                            src="<?= get_template_directory_uri() . '/assets/img/icons/instagram.png'; ?>" height="20"
-                            width="20"/>Instagram</a>
+                            src="<?= get_template_directory_uri() . '/assets/img/icons/instagram.png'; ?>" alt="Instagram"
+                            height="20" width="20"/>Instagram</a>
             </li>
             <li class="wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.3s"><a
                         href="https://www.facebook.com/ECLesVikingsYvetot/"
