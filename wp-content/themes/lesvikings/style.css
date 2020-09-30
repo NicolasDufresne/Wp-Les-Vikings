@@ -573,7 +573,7 @@ body {
     overflow: hidden;
     position: relative;
     width: 100%;
-    background-image: url("../img/lesVikings/web/1bis.JPG");
+    background-image: url("assets/img/lesVikings/web/1bis.JPG");
     background-attachment: fixed;
     background-size: cover;
     -moz-background-size: cover;
@@ -588,7 +588,7 @@ body {
     overflow: hidden;
     position: relative;
     width: 100%;
-    background-image: url("../img/lesVikings/web/2bis.JPG");
+    background-image: url("assets/img/lesVikings/web/2bis.JPG");
     background-attachment: fixed;
     background-size: cover;
     -moz-background-size: cover;
@@ -603,7 +603,7 @@ body {
     overflow: hidden;
     position: relative;
     width: 100%;
-    background-image: url("../img/lesVikings/web/3bis.JPG");
+    background-image: url("assets/img/lesVikings/web/3bis.JPG");
     background-attachment: fixed;
     background-size: cover;
     -moz-background-size: cover;
@@ -618,7 +618,7 @@ body {
     overflow: hidden;
     position: relative;
     width: 100%;
-    background-image: url("../img/lesVikings/web/4bis.JPG");
+    background-image: url("assets/img/lesVikings/web/4bis.JPG");
     background-attachment: fixed;
     background-size: cover;
     -moz-background-size: cover;

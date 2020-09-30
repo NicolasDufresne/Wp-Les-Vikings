@@ -77,7 +77,7 @@
     </div>
 
     <div id="logo">
-        <a href="accueil.php">
+        <a href="<?= esc_url(home_url('/')); ?>">
             <img src="<?= get_template_directory_uri() . '/assets/img/logo/logo.jpg'; ?>" alt="Logo" height="80">
         </a>
     </div>
@@ -86,10 +86,10 @@
         <div id="menu">&#x2261; Menu</div>
         <div class="clear"></div>
         <ul>
-            <li class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s"><a href="accueil.php">Accueil</a></li>
-            <li class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s"><a href="informations-pratiques.php">Informations
+            <li class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s"><a href="<?= esc_url(home_url('/')); ?>">Accueil</a></li>
+            <li class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s"><a href="<?= esc_url(home_url('/')); ?>">Informations
                     pratiques</a></li>
-            <li class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.3s"><a href="espace-professionnel.php">Espace
+            <li class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.3s"><a href="<?= esc_url(home_url('espace-professionnel')); ?>">Espace
                     professionnel</a></li>
             <li class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s"><a href="nous-contacter.php">Nous
                     contacter</a></li>
