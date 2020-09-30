@@ -1239,7 +1239,7 @@ body {
 
 /*********************************form-global**************************************/
 .contact-fond {
-    background-image: url("../img/lesVikings/web/15.JPG");
+    background-image: url("assets/img/lesVikings/web/15.JPG");
     width: 100%;
     background-size: cover;
     -moz-background-size: cover;
@@ -1249,7 +1249,7 @@ body {
 }
 
 .contact-fond-hachure {
-    background-image: url("../img/lesVikings/web/hachures.png");
+    background-image: url("assets/img/lesVikings/web/hachures.png");
     padding: 20px;
     width: 100%;
     background-size: cover;

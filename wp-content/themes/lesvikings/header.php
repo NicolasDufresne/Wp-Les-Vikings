@@ -87,11 +87,11 @@
         <div class="clear"></div>
         <ul>
             <li class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s"><a href="<?= esc_url(home_url('/')); ?>">Accueil</a></li>
-            <li class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s"><a href="<?= esc_url(home_url('/')); ?>">Informations
+            <li class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s"><a href="<?= esc_url(home_url('informations')); ?>">Informations
                     pratiques</a></li>
             <li class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.3s"><a href="<?= esc_url(home_url('espace-professionnel')); ?>">Espace
                     professionnel</a></li>
-            <li class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s"><a href="nous-contacter.php">Nous
+            <li class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s"><a href="<?= esc_url(home_url('nous-contacter')); ?>">Nous
                     contacter</a></li>
         </ul>
     </nav>

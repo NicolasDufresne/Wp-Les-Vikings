@@ -43,10 +43,10 @@
             <h3>Navigation</h3>
             <ul>
                 <li><a href="index.php">Accueil</a></li>
-                <li><a href="informations-pratiques.php">Informations pratiques</a></li>
-                <li><a href="espace-professionnel.php">Espace professionnel</a></li>
-                <li><a href="nous-contacter.php">Nous contacter</a></li>
-                <li><a href="mentions-legales.php">Mentions légales</a></li>
+                <li><a href="<?= esc_url(home_url('informations-pratiques')); ?>">Informations pratiques</a></li>
+                <li><a href="<?= esc_url(home_url('espace-professionnel')); ?>">Espace professionnel</a></li>
+                <li><a href="<?= esc_url(home_url('nous-contacter')); ?>">Nous contacter</a></li>
+                <li><a href="<?= esc_url(home_url('mentions-legales')); ?>">Mentions légales</a></li>
             </ul>
         </div>
 
