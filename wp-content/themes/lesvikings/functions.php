@@ -184,3 +184,9 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 include('inc/cuztom-2.9/cuztom.php');
 
 require get_template_directory() . '/inc/cuztom/cuztom-spectacles.php';
+
+
+/**
+ * Image size.
+ */
+add_image_size('affiches', 200, 300, true);

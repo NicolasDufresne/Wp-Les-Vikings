@@ -14,21 +14,36 @@
     <h1 class=" animated fadeInDown">Programmation</h1>
     <div class="block"></div>
     <div class="wrap-affiches">
-        <?php foreach ($infos as $informations) { ?>
-            <div class="affiches">
-                <a href="affiche.php?id=<?php echo urlencode($informations['id']); ?>">
-                    <img alt="affiches" src="<?php echo $informations['affiche']; ?>" width="200"
-                         height="300"/></a>
-                <div class="infos-affiches-accueil">
-                    <h2><?php echo $informations['title']; ?></h2>
-                    <h3><?php echo $informations['author']; ?></h3>
-                    <div class="dates">
-                        <p><?php echo $informations['date'] ?></p>
+        <?php
+        /* Cible le post type */
+        $query_actualite_accueil = new WP_Query(array(
+            'post_status' => 'publish',
+            'post_type' => 'spectacles',
+        ));
+        if ($query_actualite_accueil->have_posts()) {
+            /* Tant que icon_menu exist */
+            while ($query_actualite_accueil->have_posts()) {
+                $query_actualite_accueil->the_post();
+                $datas = get_post_meta(get_the_ID());
+                var_dump($datas);?>
+                <div class="affiches">
+                    <a href="<?= get_the_permalink();?>">
+                        <?= wp_get_attachment_image($datas['_image'][0], 'affiches'); ?>
+                        <div class="infos-affiches-accueil">
+                        <h2 style="color: <?= $datas['_couleur'][0];?>"><?php echo $datas['_author'][0];?></h2>
+                        <h3 style="text-transform: uppercase"><?= $datas['_titre'][0];?></h3>
+                        <div class="dates">
+                            <p><?= $datas['_date'][0]; ?></p>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-        <?php } ?>
+            <?php }
+        } else {
+            ?> <h2>No post found</h2> <?php
+        }
+        /* Restore original Post Data */
+        wp_reset_postdata();
+        ?>
     </div>
 </section>
 
