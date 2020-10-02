@@ -16,16 +16,16 @@
     <div class="wrap-affiches">
         <?php
         /* Cible le post type */
-        $query_actualite_accueil = new WP_Query(array(
+        $query_affiches = new WP_Query(array(
             'post_status' => 'publish',
             'post_type' => 'spectacles',
         ));
-        if ($query_actualite_accueil->have_posts()) {
+        if ($query_affiches->have_posts()) {
             /* Tant que icon_menu exist */
-            while ($query_actualite_accueil->have_posts()) {
-                $query_actualite_accueil->the_post();
+            while ($query_affiches->have_posts()) {
+                $query_affiches->the_post();
                 $datas = get_post_meta(get_the_ID());
-                var_dump($datas);?>
+//                var_dump($datas);?>
                 <div class="affiches">
                     <a href="<?= get_the_permalink();?>">
                         <?= wp_get_attachment_image($datas['_image'][0], 'affiches'); ?>

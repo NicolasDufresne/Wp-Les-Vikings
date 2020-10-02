@@ -39,9 +39,40 @@ $work->add_meta_box(
             'admin_column_filter'   => false,
         ),
         array(
+            'id'         => '_select',
+            'type'       => 'select',
+            'label'      => 'Catégorie',
+            'options'    => array(
+                'Concert, Chanson' => 'Concert, Chanson',
+                'Apéro Concert' => 'Apéro Concert',
+                'Concert' => 'Concert',
+                'Humour' => 'Humour',
+                'Comédie musicale' => 'Comédie musicale',
+                'Théâtre' => 'Théâtre',
+                'Concert de Noël' => 'Concert de Noël'
+
+            ),
+        ),
+
+        array(
             'id'    => '_description',
-            'type'  => 'textarea',
+            'type'  => 'wysiwyg',
             'label' => 'Description',
+        ),
+        array(
+            'id'    => '_tarif',
+            'type'  => 'textarea',
+            'label' => 'Tarif',
+        ),
+        array(
+            'id'    => '_lien',
+            'type'  => 'wysiwyg',
+            'label' => 'Liens'
+        ),
+        array(
+            'id'    => '_reservation',
+            'type'  => 'wysiwyg',
+            'label' => 'Réservation'
         ),
         array(
             'id'    => '_couleur',
