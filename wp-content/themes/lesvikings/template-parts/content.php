@@ -12,12 +12,6 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <header class="entry-header">
         <?php
-        if (is_singular()) :
-            the_title('<h1 class="entry-title">', '</h1>');
-        else :
-            the_title('<h2 class="entry-title"><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h2>');
-        endif;
-
         if ('post' === get_post_type()) :
             ?>
             <div class="entry-meta">
@@ -29,7 +23,7 @@
         <?php endif; ?>
     </header><!-- .entry-header -->
 
-    <?= $query_id = get_the_ID() ?>
+    <?php $query_id = get_the_ID() ?>
     <?php
     /* Cible le post type */
     $query_actualite_accueil = new WP_Query(array(
@@ -41,11 +35,10 @@
         /* Tant que icon_menu exist */
         while ($query_actualite_accueil->have_posts()) {
             $query_actualite_accueil->the_post();
-            $datas = get_post_meta(get_the_ID());
-            var_dump($datas); ?>
+            $datas = get_post_meta(get_the_ID()); ?>
             <section id="affiche-detail">
                 <div class="wrap-affiches">
-                    <?= wp_get_attachment_image($datas['_image'][0], 'affiches'); ?>
+                    <?= wp_get_attachment_image($datas['_image'][0], 'affiches-page'); ?>
                     <div class="description">
                         <div style="background-color: <?= $datas['_couleur'][0]; ?>">
                             <h2><?= $datas['_author'][0]; ?></h2>
