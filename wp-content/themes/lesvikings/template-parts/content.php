@@ -55,7 +55,7 @@
                         <div class="descriptionDate">
                             <p><?php echo ucfirst(strftime("%A %x", strtotime($datas['_date'][0]))) . ' à ' . date('G\hi', strtotime($datas['_date'][0])); ?></p>
                         </div>
-                        <p style="border-top: solid 2px <?= $datas['_couleur'][0]; ?>" class="txt">
+                        <p class="txt" style="border-top: solid 2px <?= $datas['_couleur'][0]; ?>;">
                             <?= nl2br($datas['_description'][0]); ?>
                         <p>
                     </div>
