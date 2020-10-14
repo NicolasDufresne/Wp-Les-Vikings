@@ -212,3 +212,49 @@ function orderByDate($key) {
         return $t1-$t2;
     };
 }
+
+function debug($template){
+    echo '<pre>';
+    var_dump($template);
+    echo '</pre>';
+}
+
+add_action( 'wp', 'delete_expired_coupons_daily' );
+function delete_expired_coupons_daily() {
+    if ( ! wp_next_scheduled( 'delete_expired_coupons' ) ) {
+        wp_schedule_event( time(), 'daily', 'delete_expired_coupons');
+    }
+}
+add_action( 'delete_expired_coupons', 'delete_expired_coupons_callback' );
+
+function delete_expired_coupons_callback() {
+
+    $args = array(
+        'post_status' => 'publish',
+        'post_type' => 'spectacles'
+    );
+
+    $coupons = new WP_Query($args);
+    if ($coupons->have_posts()):
+        while($coupons->have_posts()): $coupons->the_post();
+            $time = strtotime('+2 hour', time()); echo '<br/>';
+            $datas = get_post_meta(get_the_ID());
+
+            $expiration_date = $datas['_date'][0]; echo '<br/>';
+
+            if ($expiration_date < $time) {
+                // header("Refresh:0");
+                wp_delete_post(get_the_ID(), false);
+                //Use wp_delete_post(get_the_ID(),true) to delete the post from the trash too.
+            }
+        endwhile;
+    endif;
+}
+
+// Update post
+$my_post = array();
+$my_post['ID'] = get_the_ID();
+$my_post['post_status'] = 'expired';
+
+// Update the post into the database
+wp_update_post( $my_post );

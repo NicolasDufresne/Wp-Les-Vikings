@@ -4,15 +4,16 @@
 
 date_default_timezone_set('Europe/Paris');
 setlocale(LC_TIME, 'fr_FR.utf8', 'fr', 'fr_FR', 'fr_FR.iso-8859-15', "French");
-
+delete_expired_coupons_callback();
 ?>
-
 
     <div id="parallax-world-of-ugg">
         <div class="parallax-one">
             <h2>Les Vikings</h2>
         </div>
     </div>
+
+
 
     <section id="programmation">
         <div class="block"></div>
