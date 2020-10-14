@@ -198,3 +198,17 @@ require get_template_directory() . '/inc/cuztom/cuztom-spectacles.php';
  */
 add_image_size('affiches', 200, 300, true);
 add_image_size('affiches-page', 400, 500, true);
+
+
+/**
+ * Function
+ * @param $key
+ * @return Closure
+ */
+function orderByDate($key) {
+    return function ($a, $b) use ($key) {
+        $t1 = strtotime($a[$key][0]);
+        $t2 = strtotime($b[$key][0]);
+        return $t1-$t2;
+    };
+}

@@ -7,6 +7,9 @@
  * @package lesvikings
  */
 
+date_default_timezone_set('Europe/Paris');
+setlocale(LC_TIME, 'fr_FR.utf8', 'fr', 'fr_FR', 'fr_FR.iso-8859-15', "French");
+
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -53,7 +56,10 @@
 
                         <!---------------------------------------Date et Description------------------------------------------------>
                         <div class="descriptionDate">
-                            <p><?php echo ucfirst(strftime("%A %x", strtotime($datas['_date'][0]))) . ' à ' . date('G\hi', strtotime($datas['_date'][0])); ?></p>
+                            <p>
+                                <?php $value = gmdate("l d M Y H:i:s", $datas['_date'][0]);
+                                echo ucfirst(strftime("%A %d %B %Y à %Hh%M", strtotime($value)));?>
+                            </p>
                         </div>
                         <p class="txt" style="border-top: solid 2px <?= $datas['_couleur'][0]; ?>;">
                             <?= nl2br($datas['_description'][0]); ?>

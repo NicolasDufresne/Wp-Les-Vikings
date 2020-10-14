@@ -58,21 +58,27 @@ $work->add_meta_box(
             'id'    => '_description',
             'type'  => 'wysiwyg',
             'label' => 'Description',
+            'explanation' => __('/!\ Faire attention à la case'),
+
         ),
         array(
             'id'    => '_tarif',
             'type'  => 'textarea',
             'label' => 'Tarif',
+            'explanation' => __('/!\ Faire attention au retour à la ligne <br> Ex: <br> Tarif Unique : 29 € <br> Tarif Réduit : 15€'),
         ),
         array(
             'id'    => '_lien',
             'type'  => 'wysiwyg',
-            'label' => 'Liens'
+            'label' => 'Liens',
+            'explanation' => __('Cliquer sur le petit chainon pour ajouter un lien <br> /!\ Faire attention au retour à la ligne <br> Ex: <br> Théatre à l\'Ouest <br> FNAC'),
+
         ),
         array(
             'id'    => '_reservation',
             'type'  => 'wysiwyg',
-            'label' => 'Réservation'
+            'label' => 'Réservation',
+            'explanation' => __('/!\ Faire attention à la case'),
         ),
         array(
             'id'    => '_couleur',
@@ -85,7 +91,7 @@ $work->add_meta_box(
             'type'  => 'datetime',
             'label' => 'Date et heure',
             'args'  => array(
-                'date_format' => 'mm/dd/yy'
+                'date_format' => 'm/d/yy'
             )
         ),
         array(
