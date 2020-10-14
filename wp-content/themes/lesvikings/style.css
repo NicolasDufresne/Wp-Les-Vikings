@@ -1528,8 +1528,12 @@ th {
 
 /*SPECIAL EVENT*/
 .important {
+    width: 100%;
     text-align: center;
-    font-size: 2rem;
-    color: red;
-    padding: 50px;
+    font-size: 1.1rem;
+    color: gray;
+}
+
+.important h1 {
+    font-size: 1.5rem;
 }

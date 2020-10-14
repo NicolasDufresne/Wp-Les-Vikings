@@ -1,10 +1,10 @@
-<?php /* Template Name: Informations pratiques */?>
+<?php /* Template Name: Informations pratiques */ ?>
 
 <?php get_header(); ?>
 
     <div id="parallax-world-of-ugg">
         <div class="parallax-two">
-            <h2  class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">Informations pratiques</h2>
+            <h2 class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">Informations pratiques</h2>
             <p class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">Pour tout savoir sur
                 <span class="p wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">Les Vikings</span></p>
         </div>
@@ -17,10 +17,10 @@
             <nav class="animated fadeInDown nav-infos" id="nav-infos">
                 <ul>
                     <li><a href="#billeterie" class="nav-active">Billetterie</a></li>
-                    <li><a href="#modalites"  class="nav-active">Modalités de règlement</a></li>
+                    <li><a href="#modalites" class="nav-active">Modalités de règlement</a></li>
                     <li><a href="#stationner" class="nav-active">Où stationner ?</a></li>
-                    <li><a href="#venir"      class="nav-active">Venir aux Vikings</a></li>
-                    <li><a href="#horaires"   class="nav-active">Horaires des spectacles</a></li>
+                    <li><a href="#venir" class="nav-active">Venir aux Vikings</a></li>
+                    <li><a href="#horaires" class="nav-active">Horaires des spectacles</a></li>
                 </ul>
             </nav>
         </div>
@@ -66,17 +66,20 @@
                 <li>Aux demandeurs d'emploi.</li>
                 <li>Aux groupes à partir de 10 personnes.</li>
                 <li>Aux comités d'entreprise et aux membres du CNAS.</li>
-                <li>Aux élèves inscrits à l'école municipale d'arts plastiques, au conservatoire de la musique de la CCYN, à
+                <li>Aux élèves inscrits à l'école municipale d'arts plastiques, au conservatoire de la musique de la
+                    CCYN, à
                     la MJC d'Yvetot, et aux professionnels de la culture et du spectacle.
                 </li>
             </ul>
             <h2>Le tarif scolaires, solidaire et partenaires sont réservés..</h2>
-            <p>Aux bénéficiaires des minimas sociaux, aux étudiants boursiers, aux personnes en situation de handicap, aux
+            <p>Aux bénéficiaires des minimas sociaux, aux étudiants boursiers, aux personnes en situation de handicap,
+                aux
                 groupes scolaires et partenaires d'un projet d'action culturelle.</p>
             <h2>Le tarif abonné..</h2>
             <p>Est un abonnement nominatif réservé à l'achat d'un minimum de 3 spectacles.</p>
             <p>Les adhésions sont à faire à l'accueil de la salle aux heures d'ouverture.</p><br/>
-            <h3>L'entrée est gratuite pour les enfants de moins de 10 ans, si le spectacle est adapté à l'âge de l'enfant,
+            <h3>L'entrée est gratuite pour les enfants de moins de 10 ans, si le spectacle est adapté à l'âge de
+                l'enfant,
                 et dans la limite des places disponibles.</h3>
         </div>
     </section>
@@ -157,7 +160,8 @@
 
     <section id="infos">
         <div class="wrap">
-            <h1 class="wow fadeInDown" data-wow-delay="0.15s">Nous attirons votre attention sur les points suivants :</h1>
+            <h1 class="wow fadeInDown" data-wow-delay="0.15s">Nous attirons votre attention sur les points suivants
+                :</h1>
             <ul>
                 <li>Pour le confort de tous, les téléphones portables doivent être éteints pendant les spectacles.</li>
                 <li>Les photographies avec ou sans flash, les enregistrements sonores ou vidéos sont strictement
@@ -167,11 +171,27 @@
             </ul>
             <h2>Personnes à mobilité réduite</h2>
             <p>Des accès spécialement aménagés et des places adaptés vous sont réservés.</p>
-            <p>Afin de vous accueillir dans les meilleures conditions, nous vous prions de bien vouloir contacter la salle
+            <p>Afin de vous accueillir dans les meilleures conditions, nous vous prions de bien vouloir contacter la
+                salle
                 au 02.35.95.15.46.</p>
         </div>
     </section>
 
     <div class="block"></div>
+
+    <!-- fix nav -->
+    <script>
+        $(document).scroll(function () {
+            var y = $(this).scrollTop();
+            var navWrap = $('#navWrap').offset().top;
+            if (y > navWrap) {
+                $('#nav-infos').addClass('sticky');
+                $('#ajout').addClass('add');
+            } else {
+                $('#nav-infos').removeClass('sticky');
+                $('#ajout').removeClass('add');
+            }
+        });
+    </script>
 
 <?php get_footer();

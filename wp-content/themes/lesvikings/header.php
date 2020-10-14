@@ -25,14 +25,12 @@
     <meta name="keywords"
           content="Zenith Rouen,Docks le Havre,culture,spectacles,yvetot,dutronc,opéra,concert,danse,humour,théâtre,gilles camuset,salon,espace culturel,"/>
     <title>Espace Les Vikings - Ville d'Yvetot</title>
-    <link rel="icon" type="image/png" href="assets/img/logo/logo.jpg"/>
+    <link rel="icon" type="image/png" href="<?= get_template_directory_uri() . '/assets/img/logo/logo.jpg'; ?>"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-    <!-- animated css-->
-    <link rel="stylesheet" href="assets/css/animate.css"/>
-
     <!-- wow.js -->
-    <script src="assets/js/wow.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
     <script>new WOW().init();</script>
 
     <!--Leaflet map-->
@@ -42,9 +40,6 @@
     <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
             integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
             crossorigin=""></script>
-
-    <!--Flexslider-->
-    <link rel="stylesheet" href="assets/css/flexslider.css" type="text/css" media="screen"/>
 
     <!--responsive navbar-->
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -59,7 +54,8 @@
             <li class="wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.4s"><a
                         href="https://www.instagram.com/villeyvetot/?hl=fr"
                         onclick="window.open(this.href);return false"><img
-                            src="<?= get_template_directory_uri() . '/assets/img/icons/instagram.png'; ?>" alt="Instagram"
+                            src="<?= get_template_directory_uri() . '/assets/img/icons/instagram.png'; ?>"
+                            alt="Instagram"
                             height="20" width="20"/>Instagram</a>
             </li>
             <li class="wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.3s"><a
@@ -78,7 +74,7 @@
 
     <div id="logo">
         <a href="<?= esc_url(home_url('/')); ?>">
-            <img src="<?= get_template_directory_uri() . '/assets/img/logo/logo.jpg'; ?>" alt="Logo" height="80">
+            <img class="wow animate__bounceIn" src="<?= get_template_directory_uri() . '/assets/img/logo/logo.jpg'; ?>" alt="Logo" height="80">
         </a>
     </div>
 
@@ -86,16 +82,47 @@
         <div id="menu">&#x2261; Menu</div>
         <div class="clear"></div>
         <ul>
-            <li class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s"><a href="<?= esc_url(home_url('/')); ?>">Accueil</a></li>
-            <li class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s"><a href="<?= esc_url(home_url('informations')); ?>">Informations
+            <li class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s"><a
+                        href="<?= esc_url(home_url('/')); ?>">Accueil</a></li>
+            <li class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s"><a
+                        href="<?= esc_url(home_url('informations')); ?>">Informations
                     pratiques</a></li>
-            <li class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.3s"><a href="<?= esc_url(home_url('espace-professionnel')); ?>">Espace
+            <li class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.3s"><a
+                        href="<?= esc_url(home_url('espace-professionnel')); ?>">Espace
                     professionnel</a></li>
-            <li class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s"><a href="<?= esc_url(home_url('nous-contacter')); ?>">Nous
+            <li class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s"><a
+                        href="<?= esc_url(home_url('nous-contacter')); ?>">Nous
                     contacter</a></li>
         </ul>
     </nav>
 </div>
 
-<div class="clear"></div>
+
+<?php
+/* Cible le post type */
+$query_affiches = new WP_Query(array(
+    'post_status' => 'publish',
+    'post_type' => 'important',
+));
+if ($query_affiches->have_posts()) {
+    /* Tant que icon_menu exist */
+    while ($query_affiches->have_posts()) {
+        $query_affiches->the_post();
+        $datas = get_post_meta(get_the_ID()); ?>
+
+        <div class="clear"></div>
+        <div class="important" style="display: block">
+            <h1><?= get_the_title();?></h1>
+            <p><?= get_the_content();?></p>
+        </div>
+
+    <?php }
+
+} else {
+    ?>  <div class="important" style="display: none"></div> <?php
+}
+/* Restore original Post Data */
+wp_reset_postdata();
+?>
+
 

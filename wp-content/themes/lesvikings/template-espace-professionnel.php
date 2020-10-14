@@ -94,4 +94,20 @@
         </div>
     </div>
 
+
+    <!-- fix nav -->
+    <script>
+        $(document).scroll(function () {
+            var y = $(this).scrollTop();
+            var navWrap = $('#navWrap').offset().top;
+            if (y > navWrap) {
+                $('#nav-infos').addClass('sticky');
+                $('#ajout').addClass('add');
+            } else {
+                $('#nav-infos').removeClass('sticky');
+                $('#ajout').removeClass('add');
+            }
+        });
+    </script>
+
 <?php get_footer();

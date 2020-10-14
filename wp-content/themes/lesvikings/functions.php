@@ -155,8 +155,9 @@ function lesvikings_scripts()
         wp_enqueue_script('comment-reply');
     }
 }
-
 add_action('wp_enqueue_scripts', 'lesvikings_scripts');
+
+
 
 /**
  * Implement the Custom Header feature.
@@ -191,6 +192,7 @@ if (defined('JETPACK__VERSION')) {
 include('inc/cuztom-2.9/cuztom.php');
 
 require get_template_directory() . '/inc/cuztom/cuztom-spectacles.php';
+require get_template_directory() . '/inc/cuztom/cuztom-important.php';
 
 
 /**

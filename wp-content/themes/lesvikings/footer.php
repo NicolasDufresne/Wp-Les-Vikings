@@ -15,7 +15,8 @@
     <section id="footer">
         <div class="columns wow fadeIn" data-wow-duration="1s" data-wow-delay="0.3s">
             <a href="https://www.yvetot.fr" onclick="window.open(this.href);return false">
-                <img src="<?= get_template_directory_uri() . '/assets/img/partenaires/yvetot.png'; ?>" alt="yvetot" width="300" height="60"></a>
+                <img src="<?= get_template_directory_uri() . '/assets/img/partenaires/yvetot.png'; ?>" alt="yvetot"
+                     width="300" height="60"></a>
         </div>
         <div class="columns wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
             <h3>Adresse</h3>
@@ -79,51 +80,6 @@
         integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
         crossorigin=""></script>
 
-<!-- fix nav -->
-<script>
-    $(document).scroll(function () {
-        var y = $(this).scrollTop();
-        var navWrap = $('#navWrap').offset().top;
-        if (y > navWrap) {
-            $('#nav-infos').addClass('sticky');
-            $('#ajout').addClass('add');
-        } else {
-            $('#nav-infos').removeClass('sticky');
-            $('#ajout').removeClass('add');
-        }
-    });
-</script>
-
-<!-- FlexSlider -->
-<script defer src="assets/js/jquery.flexslider.js"></script>
-
-<script>
-    $(window).load(function () {
-        $('.flexslider').flexslider({
-            animation: "slide",
-            start: function (slider) {
-                $('body').removeClass('loading');
-            }
-        });
-    });
-</script>
-
-
-<!-- active nav-infos -->
-<script>
-    var btnContainer = document.getElementById("nav-infos");
-    var btns = btnContainer.getElementsByClassName("nav-active");
-    for (var i = 0; i < btns.length; i++) {
-        btns[i].addEventListener("click", function() {
-            var current = document.getElementsByClassName("active");
-
-            if (current.length > 0) {
-                current[0].className = current[0].className.replace(" active", "");
-            }
-            this.className += " active";
-        });
-    } </script>
-</div><!-- #page -->
 
 <?php wp_footer(); ?>
 
