@@ -5,9 +5,9 @@
 
     <div id="parallax-world-of-ugg">
         <div class="parallax-three">
-            <h2  class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">Espace professionnel</h2>
-            <p class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">Pour toutes informations
-                <span class="p wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">techniques</span></p>
+            <h2  class="wow animate__fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">Espace professionnel</h2>
+            <p class="wow animate__fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">Pour toutes informations
+                <span class="p wow animate__fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">techniques</span></p>
         </div>
     </div>
 

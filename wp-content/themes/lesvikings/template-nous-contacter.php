@@ -46,9 +46,9 @@
     <section>
         <div id="parallax-world-of-ugg">
             <div class="parallax-four">
-                <h2  class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">Nous contacter</h2>
-                <p class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">Votre avis nous
-                    <span class="p wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s"> intéresse</span></p>
+                <h2  class="wow animate__fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">Nous contacter</h2>
+                <p class="wow animate__fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">Votre avis nous
+                    <span class="p wow animate__fadeIn" data-wow-duration="1s" data-wow-delay="0.8s"> intéresse</span></p>
             </div>
         </div>
     </section>
@@ -58,30 +58,30 @@
             <div class="block"></div>
             <h1 class="animated fadeInDown">Notre équipe</h1>
             <div class="block"></div>
-            <div class="wow fadeInDown personnel" data-wow-duration="1s" data-wow-delay="0.2s">
+            <div class="wow animate__fadeInDown personnel" data-wow-duration="1s" data-wow-delay="0.2s">
                 <h2>Sylvie Dufaur</h2>
                 <p>Chargée de la Saison Culturelle</p>
                 <p> Accueil des artistes et du public, billeterie</p>
                 <p><a href="mailto:sylvie.dufaur@Yvetot.fr">sylvie.dufaur@yvetot.fr</a> - 02.35.95.15.46</p>
             </div>
-            <div class="wow fadeInDown personnel" data-wow-duration="1s" data-wow-delay="0.3s">
+            <div class="wow animate__fadeInDown personnel" data-wow-duration="1s" data-wow-delay="0.3s">
                 <h2>Gilles Camuset</h2>
                 <p>Régisseur général et lumières</p>
                 <p><a href="mailto:gilles.camuset@yvetot.fr">gilles.camuset@yvetot.fr</a> - 02.35.95.15.46</p>
             </div>
-            <div class="wow fadeInDown personnel" data-wow-duration="1s" data-wow-delay="0.4s">
+            <div class="wow animate__fadeInDown personnel" data-wow-duration="1s" data-wow-delay="0.4s">
                 <h2>Benjamin Charpentier</h2>
                 <p>Technicien son</p>
             </div>
-            <div class="wow fadeInDown personnel" data-wow-duration="1s" data-wow-delay="0.5s">
+            <div class="wow animate__fadeInDown personnel" data-wow-duration="1s" data-wow-delay="0.5s">
                 <h2>Ludovic Schweitzer</h2>
                 <p>Régisseur plateau</p>
             </div>
-            <div class="wow fadeInDown personnel" data-wow-duration="1s" data-wow-delay="0.6s">
+            <div class="wow animate__fadeInDown personnel" data-wow-duration="1s" data-wow-delay="0.6s">
                 <h2>Nadine Douche</h2>
                 <p>Entretien des locaux</p>
             </div>
-            <div class="wow fadeInDown personnel" data-wow-duration="1s" data-wow-delay="0.7s">
+            <div class="wow animate__fadeInDown personnel" data-wow-duration="1s" data-wow-delay="0.7s">
                 <h2>Stéphane Miller et Jordan Huré</h2>
                 <p>Communication</p>
                 <p><a href="mailto:service.communication@yvetot.fr">service.communication@yvetot.fr</a></p>

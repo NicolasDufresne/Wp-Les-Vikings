@@ -4,9 +4,9 @@
 
     <div id="parallax-world-of-ugg">
         <div class="parallax-two">
-            <h2 class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">Informations pratiques</h2>
-            <p class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">Pour tout savoir sur
-                <span class="p wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">Les Vikings</span></p>
+            <h2 class="wow animate__fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">Informations pratiques</h2>
+            <p class="wow animate__fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">Pour tout savoir sur
+                <span class="p wow animate__fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">Les Vikings</span></p>
         </div>
     </div>
 
@@ -28,7 +28,7 @@
 
     <section id="billeterie">
         <div class="wrap">
-            <h1 class="wow fadeInDown" data-wow-delay="0.15s">Billetterie pour la programmation municipale</h1>
+            <h1 class="wow animate__fadeInDown" data-wow-delay="0.15s">Billetterie pour la programmation municipale</h1>
             <div class="block"></div>
             <h2>Billetterie à l'accueil de la salle</h2>
             <p>Ouvert le mardi, mercredi, jeudi et vendredi de 14 h à 17 h 30.</p>
@@ -43,7 +43,7 @@
 
     <section id="modalites">
         <div class="wrap">
-            <h1 class="wow fadeInDown" data-wow-delay="0.15s">Modalités de règlement des réservations</h1>
+            <h1 class="wow animate__fadeInDown" data-wow-delay="0.15s">Modalités de règlement des réservations</h1>
             <div class="block"></div>
             <h2>Les réservations et paiements peuvent s'effectuer :</h2>
             <ul>
@@ -86,7 +86,7 @@
 
     <section id="stationner">
         <div class="wrap">
-            <h1 class="wow fadeInDown" data-wow-delay="0.15s">Où stationner ?</h1>
+            <h1 class="wow animate__fadeInDown" data-wow-delay="0.15s">Où stationner ?</h1>
             <div class="block"></div>
             <h2>Les parkings à proximité de la salle</h2>
             <ul>
@@ -103,7 +103,7 @@
 
     <section id="venir">
         <div class="wrap">
-            <h1 class="wow fadeInDown" data-wow-delay="0.15s">Venir aux Vikings</h1>
+            <h1 class="wow animate__fadeInDown" data-wow-delay="0.15s">Venir aux Vikings</h1>
             <div id="mapid"></div>
             <script>
                 var mymap = L.map('mapid').setView([49.614671, 0.760022], 16);
@@ -146,7 +146,7 @@
 
     <section id="horaires">
         <div class="wrap">
-            <h1 class="wow fadeInDown" data-wow-delay="0.15s">Horaires des spectacles</h1>
+            <h1 class="wow animate__fadeInDown" data-wow-delay="0.15s">Horaires des spectacles</h1>
             <div class="block"></div>
             <p>Les horaires indiqués dans ce programme et sur notre site internet indiquent l’heure de début de la
                 représentation.</p>
@@ -160,7 +160,7 @@
 
     <section id="infos">
         <div class="wrap">
-            <h1 class="wow fadeInDown" data-wow-delay="0.15s">Nous attirons votre attention sur les points suivants
+            <h1 class="wow animate__fadeInDown" data-wow-delay="0.15s">Nous attirons votre attention sur les points suivants
                 :</h1>
             <ul>
                 <li>Pour le confort de tous, les téléphones portables doivent être éteints pendant les spectacles.</li>

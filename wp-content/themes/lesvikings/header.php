@@ -17,6 +17,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="profile" href="https://gmpg.org/xfn/11">
     <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html" charset="ISO-8859-1" />
     <meta name="robots" content="all|(no)follow|(no)index|none">
     <meta name="title" content="Espace Les Vikings - Ville d'Yvetot"/>
     <meta name="author" content="Ville d'Yvetot"/>
@@ -51,20 +52,20 @@
 <div id="header">
     <div class="social">
         <ul>
-            <li class="wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.4s"><a
+            <li class="wow animate__fadeInDown" data-wow-duration="1s" data-wow-delay="0.4s"><a
                         href="https://www.instagram.com/villeyvetot/?hl=fr"
                         onclick="window.open(this.href);return false"><img
                             src="<?= get_template_directory_uri() . '/assets/img/icons/instagram.png'; ?>"
                             alt="Instagram"
                             height="20" width="20"/>Instagram</a>
             </li>
-            <li class="wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.3s"><a
+            <li class="wow animate__fadeInDown" data-wow-duration="1s" data-wow-delay="0.3s"><a
                         href="https://www.facebook.com/ECLesVikingsYvetot/"
                         onclick="window.open(this.href);return false"><img
                             src="<?= get_template_directory_uri() . '/assets/img/icons/facebook.png'; ?>" alt="Facebook"
                             height="20" width="20"/>Facebook</a>
             </li>
-            <li class="wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.2s"><a
+            <li class="wow animate__fadeInDown" data-wow-duration="1s" data-wow-delay="0.2s"><a
                         href="https://twitter.com/AgendaYvetot" onclick="window.open(this.href);return false"><img
                             src="<?= get_template_directory_uri() . '/assets/img/icons/twitter.png'; ?>" alt="Twitter"
                             height="20" width="20"/>Twitter</a>
@@ -74,7 +75,7 @@
 
     <div id="logo">
         <a href="<?= esc_url(home_url('/')); ?>">
-            <img class="wow animate__bounceIn" src="<?= get_template_directory_uri() . '/assets/img/logo/logo.jpg'; ?>" alt="Logo" height="80">
+            <img src="<?= get_template_directory_uri() . '/assets/img/logo/logo.jpg'; ?>" alt="Logo" height="80">
         </a>
     </div>
 
@@ -82,15 +83,15 @@
         <div id="menu">&#x2261; Menu</div>
         <div class="clear"></div>
         <ul>
-            <li class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s"><a
+            <li class="wow animate__fadeIn" data-wow-duration="1s" data-wow-delay="0.5s"><a
                         href="<?= esc_url(home_url('/')); ?>">Accueil</a></li>
-            <li class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s"><a
+            <li class="wow animate__fadeIn" data-wow-duration="1s" data-wow-delay="0.4s"><a
                         href="<?= esc_url(home_url('informations')); ?>">Informations
                     pratiques</a></li>
-            <li class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.3s"><a
+            <li class="wow animate__fadeIn" data-wow-duration="1s" data-wow-delay="0.3s"><a
                         href="<?= esc_url(home_url('espace-professionnel')); ?>">Espace
                     professionnel</a></li>
-            <li class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s"><a
+            <li class="wow animate__fadeIn" data-wow-duration="1s" data-wow-delay="0.2s"><a
                         href="<?= esc_url(home_url('nous-contacter')); ?>">Nous
                     contacter</a></li>
         </ul>

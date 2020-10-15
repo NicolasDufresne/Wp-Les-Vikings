@@ -13,12 +13,12 @@
 
 <footer>
     <section id="footer">
-        <div class="columns wow fadeIn" data-wow-duration="1s" data-wow-delay="0.3s">
+        <div class="columns wow animate__fadeIn" data-wow-duration="1s" data-wow-delay="0.3s">
             <a href="https://www.yvetot.fr" onclick="window.open(this.href);return false">
                 <img src="<?= get_template_directory_uri() . '/assets/img/partenaires/yvetot.png'; ?>" alt="yvetot"
                      width="300" height="60"></a>
         </div>
-        <div class="columns wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
+        <div class="columns wow animate__fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
             <h3>Adresse</h3>
             <address class="adresse">
                 Les Vikings
@@ -28,7 +28,7 @@
             </address>
         </div>
 
-        <div class="columns wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+        <div class="columns wow animate__fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
             <h3>Plus d'informations</h3>
             <div class="columns-info">
                 <p>Location de salle : <a href="mailto:gilles.camuset@yvetot.fr">gilles.camuset@yvetot.fr</a></p>
@@ -38,7 +38,7 @@
             </div>
         </div>
 
-        <div class="columns wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
+        <div class="columns wow animate__fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
             <h3>Navigation</h3>
             <ul>
                 <li><a href="<?= esc_url(home_url('/')); ?>">Accueil</a></li>
