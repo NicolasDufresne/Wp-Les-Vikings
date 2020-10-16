@@ -5,6 +5,8 @@ $work = new Cuztom_post_type('Spectacles', [
     'menu_icon' => 'dashicons-tickets-alt',
 ]);
 
+$value = get_permalink();
+
 $work->add_meta_box(
     'cuztom-spectacles',
     'Spectacles',
@@ -113,5 +115,11 @@ $work->add_meta_box(
             'label' => 'Image',
             'type' => 'image',
             'description' => 'Importer une image'
+        ),
+        array(
+            'id'  => '_hidden',
+            'type' => 'hidden',
+            'label' => 'Field Label',
+            'default_value' => $value ,
         ),
     ));

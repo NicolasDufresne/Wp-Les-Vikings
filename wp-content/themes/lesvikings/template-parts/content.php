@@ -39,31 +39,37 @@ setlocale(LC_TIME, 'fr_FR.utf8', 'fr', 'fr_FR', 'fr_FR.iso-8859-15', "French");
         while ($query_actualite_accueil->have_posts()) {
             $query_actualite_accueil->the_post();
             $datas = get_post_meta(get_the_ID()); ?>
+
             <section id="affiche-detail">
                 <div class="wrap-affiches">
-                    <?= wp_get_attachment_image($datas['_image'][0], 'affiches-page'); ?>
+                    <?= wp_get_attachment_image($datas['_image'][0], 'affiches-page'); ?> <!--Image-->
+
                     <div class="description">
                         <div style="background-color: <?= $datas['_couleur'][0]; ?>">
                             <h2><?= $datas['_author'][0]; ?></h2>
-                        </div>
+                        </div> <!--Titre-->
+
                         <br/>
+
                         <h3><?= $datas['_titre'][0]; ?></h3>
 
-                        <!---------------------------------------Catégories---------------------------------------------------->
                         <div class="categorie">
                             <p><?= $datas['_select'][0]; ?></p>
-                        </div>
+                        </div>  <!--Catégorie-->
 
-                        <!---------------------------------------Date et Description------------------------------------------------>
                         <div class="descriptionDate">
                             <p>
                                 <?php $value = gmdate("l d M Y H:i:s", $datas['_date'][0]);
-                                echo ucfirst(strftime("%A %d %B %Y à %Hh%M", strtotime($value)));?>
+                                echo utf8_encode(ucfirst(strftime("%A %d %B %Y &#xE0; %Hh%M", strtotime($value)))); ?>
+                                <!--Date-->
                             </p>
                         </div>
-                        <p class="txt" style="border-top: solid 2px <?= $datas['_couleur'][0]; ?>;">
-                            <?= nl2br($datas['_description'][0]); ?>
-                        <p>
+
+
+                        <p class="txt"
+                           style="border-top: solid 2px <?= $datas['_couleur'][0]; ?>;"><?= nl2br($datas['_description'][0]); ?>
+                        <p>    <!--Description-->
+
                     </div>
 
 

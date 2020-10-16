@@ -14,7 +14,6 @@ delete_expired_coupons_callback();
     </div>
 
 
-
     <section id="programmation">
         <div class="block"></div>
         <h1 class="wow animated__fadeInDown">Programmation</h1>
@@ -32,9 +31,10 @@ delete_expired_coupons_callback();
                 while ($query_affiches->have_posts()) {
                     $query_affiches->the_post();
                     $datas = get_post_meta(get_the_ID());
+                    array_push($datas, get_permalink());
                     array_push($newtab, $datas);
-
                 }
+
                 $size = count($newtab);
                 for ($i = 0; $i < $size; $i++) {
                     $newtab[$i]['_date'][0] = gmdate("l d M Y H:i:s", $newtab[$i]['_date'][0]);
@@ -42,27 +42,24 @@ delete_expired_coupons_callback();
 
                 usort($newtab, orderByDate(['_date'][0]));
 
-                foreach ($newtab as $data) {
-
-//                    echo get_permalink();
-                    ?>
-                <div class="affiches">
-                    <a href="<?= get_the_permalink(); ?>">
-                        <?= wp_get_attachment_image($data['_image'][0], 'affiches');?>
-                        <div class="infos-affiches-accueil">
-                            <h2 style="color: <?= $data['_couleur'][0]; ?>"><?= $data['_author'][0]; ?></h2>
-                            <h3 style="text-transform: uppercase"><?= $data['_titre'][0]; ?></h3>
-                            <div class="dates">
-                                <p>
-                                    <?= utf8_encode(strftime("%A %d %B %Y &#xE0; %Hh%M", strtotime($data['_date'][0]))); ?>
-                                </p>
+                foreach ($newtab as $data) {?>
+                    <div class="affiches">
+                        <a href="<?= $data[0]; ?>">
+                            <?= wp_get_attachment_image($data['_image'][0], 'affiches'); ?>
+                            <div class="infos-affiches-accueil">
+                                <h2 style="color: <?= $data['_couleur'][0]; ?>"><?= $data['_author'][0]; ?></h2>
+                                <h3 style="text-transform: uppercase"><?= $data['_titre'][0]; ?></h3>
+                                <div class="dates">
+                                    <p>
+                                        <?= utf8_encode(strftime("%A %d %B %Y &#xE0; %Hh%M", strtotime($data['_date'][0]))); ?>
+                                    </p>
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                </div> <?php
+                        </a>
+                    </div> <?php
                 }
 
-                } else {
+            } else {
                 ?> <h2>No post found</h2> <?php
             }
             /* Restore original Post Data */

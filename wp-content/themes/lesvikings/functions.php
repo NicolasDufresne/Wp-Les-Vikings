@@ -246,6 +246,9 @@ function delete_expired_coupons_callback() {
 
             if ($expiration_date < $time) {
                 wp_delete_post(get_the_ID(), false);
+                //recup id media et check avant delete
+                //wp_schedule_event/
+                
                 //Use wp_delete_post(get_the_ID(),true) to delete the post from the trash too.
             }
         endwhile;
