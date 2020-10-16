@@ -43,6 +43,7 @@ delete_expired_coupons_callback();
                 usort($newtab, orderByDate(['_date'][0]));
 
                 foreach ($newtab as $data) {?>
+
                     <div class="affiches">
                         <a href="<?= $data[0]; ?>">
                             <?= wp_get_attachment_image($data['_image'][0], 'affiches'); ?>
