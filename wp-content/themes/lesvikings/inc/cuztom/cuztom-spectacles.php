@@ -97,20 +97,6 @@ $work->add_meta_box(
             )
         ),
         array(
-            'id' => '_date2',
-            'type' => 'text',
-            'label' => 'Seconde date',
-            'description' => 'Ajouter une seconde date',
-            'explanation'           => __('Ici la seconde date du spectacle / exposition. Sept caractères maximum.'),
-            'placeholder'           => 'S',
-            'options'               => array(),
-            'args'                  => array(),
-            'repeatable'            => false,
-            'show_admin_column'     => false,
-            'admin_column_sortable' => false,
-            'admin_column_filter'   => false,
-        ),
-        array(
             'id' => '_image',
             'label' => 'Image',
             'type' => 'image',

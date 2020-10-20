@@ -7,6 +7,8 @@ setlocale(LC_TIME, 'fr_FR.utf8', 'fr', 'fr_FR', 'fr_FR.iso-8859-15', "French");
 delete_expired_coupons_callback();
 ?>
 
+
+<!--/********************************************************************************************/-->
     <div id="parallax-world-of-ugg">
         <div class="parallax-one">
             <h2>Les Vikings</h2>
@@ -175,5 +177,34 @@ delete_expired_coupons_callback();
     </section>
 
     <div class="clear"></div>
+
+    <?php $setTime = '13:33:00'?>
+
+    <script type="text/javascript">
+        function refresh(){
+            var t = 1000; // rafraîchissement en millisecondes
+            setTimeout('showDate()',t)
+        }
+
+        function showDate() {
+            var setDate = '<?=$setTime?>';
+            var date = new Date();
+            var h = date.getHours();
+            var m = date.getMinutes();
+            var s = date.getSeconds();
+            if( h < 10 ){ h = '0' + h; }
+            if( m < 10 ){ m = '0' + m; }
+            if( s < 10 ){ s = '0' + s; }
+            var time = h + ':' + m + ':' + s;
+            console.log(time);
+            refresh();
+            if (time === setDate) {
+                // location.reload();
+                alert('alert');
+            }
+        }
+    </script>
+
+    <body onload=showDate();>
 
 <?php get_footer();

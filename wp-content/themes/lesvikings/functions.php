@@ -155,8 +155,8 @@ function lesvikings_scripts()
         wp_enqueue_script('comment-reply');
     }
 }
-add_action('wp_enqueue_scripts', 'lesvikings_scripts');
 
+add_action('wp_enqueue_scripts', 'lesvikings_scripts');
 
 
 /**
@@ -207,11 +207,13 @@ add_image_size('affiches-page', 400, 500, true);
  * @param $key
  * @return Closure
  */
-function orderByDate($key) {
+//Ordonner par date les affiches
+function orderByDate($key)
+{
     return function ($a, $b) use ($key) {
         $t1 = strtotime($a[$key][0]);
         $t2 = strtotime($b[$key][0]);
-        return $t1-$t2;
+        return $t1 - $t2;
     };
 }
 
@@ -220,7 +222,9 @@ function orderByDate($key) {
  * @param $template
  * @return void
  */
-function debug($template){
+//Visualisation simplifié d'un tableau
+function debug($template)
+{
     echo '<pre>';
     var_dump($template);
     echo '</pre>';
@@ -232,29 +236,31 @@ function debug($template){
  * @param string $attachment_url
  * @return Closure|false|string
  */
-function pn_get_attachment_id_from_url( $attachment_url = '' ) {
+//Function pour récupérer l'id d'un media en fonction de son URL
+function pn_get_attachment_id_from_url($attachment_url = '')
+{
 
     global $wpdb;
     $attachment_id = false;
 
     // If there is no url, return.
-    if ( '' == $attachment_url )
+    if ('' == $attachment_url)
         return null;
 
     // Get the upload directory paths
     $upload_dir_paths = wp_upload_dir();
 
     // Make sure the upload path base directory exists in the attachment URL, to verify that we're working with a media library image
-    if ( false !== strpos( $attachment_url, $upload_dir_paths['baseurl'] ) ) {
+    if (false !== strpos($attachment_url, $upload_dir_paths['baseurl'])) {
 
         // If this is the URL of an auto-generated thumbnail, get the URL of the original image
-        $attachment_url = preg_replace( '/-\d+x\d+(?=\.(jpg|jpeg|png|gif)$)/i', '', $attachment_url );
+        $attachment_url = preg_replace('/-\d+x\d+(?=\.(jpg|jpeg|png|gif)$)/i', '', $attachment_url);
 
         // Remove the upload path base directory from the attachment URL
-        $attachment_url = str_replace( $upload_dir_paths['baseurl'] . '/', '', $attachment_url );
+        $attachment_url = str_replace($upload_dir_paths['baseurl'] . '/', '', $attachment_url);
 
         // Finally, run a custom database query to get the attachment ID from the modified attachment URL
-        $attachment_id = $wpdb->get_var( $wpdb->prepare( "SELECT wposts.ID FROM $wpdb->posts wposts, $wpdb->postmeta wpostmeta WHERE wposts.ID = wpostmeta.post_id AND wpostmeta.meta_key = '_wp_attached_file' AND wpostmeta.meta_value = '%s' AND wposts.post_type = 'attachment'", $attachment_url ) );
+        $attachment_id = $wpdb->get_var($wpdb->prepare("SELECT wposts.ID FROM $wpdb->posts wposts, $wpdb->postmeta wpostmeta WHERE wposts.ID = wpostmeta.post_id AND wpostmeta.meta_key = '_wp_attached_file' AND wpostmeta.meta_value = '%s' AND wposts.post_type = 'attachment'", $attachment_url));
 
     }
 
@@ -262,19 +268,23 @@ function pn_get_attachment_id_from_url( $attachment_url = '' ) {
 }
 
 
-add_action( 'wp', 'delete_expired_coupons_daily' );
-function delete_expired_coupons_daily() {
-    if ( ! wp_next_scheduled( 'delete_expired_coupons' ) ) {
-        wp_schedule_event( time(), 'daily', 'delete_expired_coupons');
+add_action('wp', 'delete_expired_coupons_daily');
+function delete_expired_coupons_daily()
+{
+    if (!wp_next_scheduled('delete_expired_coupons')) {
+        wp_schedule_event(time(), 'daily', 'delete_expired_coupons');
     }
 }
-add_action( 'delete_expired_coupons', 'delete_expired_coupons_callback' );
+
+add_action('delete_expired_coupons', 'delete_expired_coupons_callback');
 
 /**
  * Function
  * @return void
  */
-function delete_expired_coupons_callback() {
+//Delete un post en fonction du temps
+function delete_expired_coupons_callback()
+{
 
     $args = array(
         'post_status' => 'publish',
@@ -283,18 +293,15 @@ function delete_expired_coupons_callback() {
 
     $coupons = new WP_Query($args);
     if ($coupons->have_posts()):
-        while($coupons->have_posts()): $coupons->the_post();
-            $time = strtotime('+2 hour', time()); echo '<br/>';
+        while ($coupons->have_posts()): $coupons->the_post();
+            $time = strtotime('+2 hour', time());
             $datas = get_post_meta(get_the_ID());
-
-            $expiration_date = $datas['_date'][0]; echo '<br/>';
+            $expiration_date = $datas['_date'][0];
             $value = wp_get_attachment_image_src($datas['_image'][0]);
 
             if ($expiration_date < $time) {
                 wp_delete_attachment(pn_get_attachment_id_from_url($value[0]),true);
                 wp_delete_post(get_the_ID(), true);
-
-                //wp_schedule_event/
             }
         endwhile;
     endif;
@@ -306,4 +313,4 @@ $my_post['ID'] = get_the_ID();
 $my_post['post_status'] = 'expired';
 
 // Update the post into the database
-wp_update_post( $my_post );
+wp_update_post($my_post);
