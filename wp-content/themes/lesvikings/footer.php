@@ -46,6 +46,7 @@
                 <li><a href="<?= esc_url(home_url('espace-professionnel')); ?>">Espace professionnel</a></li>
                 <li><a href="<?= esc_url(home_url('nous-contacter')); ?>">Nous contacter</a></li>
                 <li><a href="<?= esc_url(home_url('mentions-legales')); ?>">Mentions légales</a></li>
+                <li><a href="<?= esc_url(home_url('politique-de-confidentialite')); ?>">Politique de confidentialité</a></li>
             </ul>
         </div>
 
