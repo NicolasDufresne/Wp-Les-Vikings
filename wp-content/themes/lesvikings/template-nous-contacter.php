@@ -37,7 +37,7 @@
 
     if (count($errors) == 0) {
     $success = 1;
-    mail('sylvie.dufaur@yvetot.fr', utf8_decode($sujet), utf8_decode($text));
+    mail('saison.culturelle@yvetot.fr', utf8_decode($sujet), utf8_decode($text));
     }
 
     }

@@ -13,7 +13,7 @@
 
             <h2>Conception et développement</h2>
             <p>Service communication Stéphane Miller et Jordan Huré.</p>
-            <p>Nicolas Dufresne, NFactory Shcool.</p>
+            <p>Développement Nicolas Dufresne.</p>
 
             <h2>Prestataire d’hébergement</h2>
             <p>Infosat Télécom</p>
