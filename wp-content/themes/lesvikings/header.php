@@ -29,11 +29,6 @@
     <link rel="icon" type="image/png" href="<?= get_template_directory_uri() . '/assets/img/logo/logo.jpg'; ?>"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-    <!-- wow.js -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
-    <script>new WOW().init();</script>
-
     <!--Leaflet map-->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
           integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="

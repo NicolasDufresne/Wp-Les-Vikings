@@ -51,7 +51,8 @@ $work->add_meta_box(
                 'Humour' => 'Humour',
                 'Comédie musicale' => 'Comédie musicale',
                 'Théâtre' => 'Théâtre',
-                'Concert de Noël' => 'Concert de Noël'
+                'Concert de Noël' => 'Concert de Noël',
+                'Goûter Spectacle' => 'Goûter Spectacle'
 
             ),
         ),
