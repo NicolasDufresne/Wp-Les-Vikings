@@ -26,7 +26,8 @@
     <meta name="keywords"
           content="Zenith Rouen,Docks le Havre,culture,spectacles,yvetot,dutronc,opéra,concert,danse,humour,théâtre,gilles camuset,salon,espace culturel,"/>
     <title>Espace Les Vikings - Ville d'Yvetot</title>
-    <link rel="icon" type="image/png" href="<?= get_template_directory_uri() . '/assets/img/logo/logo.jpg'; ?>"/>
+    <link rel="icon" type="image/x-icon" href="<?= get_template_directory_uri() . '/assets/img/logo/favicon.png'; ?>"/>
+    <link rel="shortcut icon" href="<?= get_template_directory_uri() . '/assets/img/logo/favicon.png'; ?>" type="image/x-icon" />
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
     <!--Leaflet map-->
@@ -70,7 +71,7 @@
 
     <div id="logo">
         <a href="<?= esc_url(home_url('/')); ?>">
-            <img src="<?= get_template_directory_uri() . '/assets/img/logo/logo.jpg'; ?>" alt="Logo" height="80">
+            <img src="<?= get_template_directory_uri() . '/assets/img/logo/logo.png'; ?>" alt="Logo" height="80">
         </a>
     </div>
 

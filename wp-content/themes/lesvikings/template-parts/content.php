@@ -42,12 +42,10 @@ setlocale(LC_TIME, 'fr_FR.utf8', 'fr', 'fr_FR', 'fr_FR.iso-8859-15', "French");
 
             <section id="affiche-detail">
                 <div class="wrap-affiches">
-                    <?= wp_get_attachment_image($datas['_image'][0], 'affiches-page'); ?> <!--Image-->
+                    <div class="affiche-details"><?= wp_get_attachment_image($datas['_image'][0], 'affiche-page'); ?></div>
 
                     <div class="description">
-                        <div style="background-color: <?= $datas['_couleur'][0]; ?>">
                             <h2><?= $datas['_author'][0]; ?></h2>
-                        </div> <!--Titre-->
 
                         <br/>
 
@@ -66,38 +64,36 @@ setlocale(LC_TIME, 'fr_FR.utf8', 'fr', 'fr_FR', 'fr_FR.iso-8859-15', "French");
                         </div>
 
 
-                        <p class="txt"
-                           style="border-top: solid 2px <?= $datas['_couleur'][0]; ?>;"><?= nl2br($datas['_description'][0]); ?>
-                        <p>    <!--Description-->
+                        <p class="txt"><?= nl2br($datas['_description'][0]); ?></p>
 
                     </div>
+
+                    <div class="clear"></div>
 
 
                     <div class="infos-affiches">
 
-                        <!---------------------------------------------tarif--------------------------------------------------->
-                        <div class="tarif">
+                        <div class="infos">
                             <h2>Tarif(s)</h2>
                             <p><?= nl2br($datas['_tarif'][0]); ?></p>
                         </div>
 
-                        <br/>
 
-                        <!---------------------------------------------link---------------------------------------------------->
-                        <div class="usefull-link">
-
-                            <!---------------------------------------------Billetterie----------------------------------------->
+                        <div class="infos">
                             <h2>Billetterie(s) en ligne</h2>
                             <p><?= nl2br($datas['_lien'][0]); ?></p>
-                            <br/>
-                            <!---------------------------------------------Reservation----------------------------------------->
+                        </div>
+
+                        <div class="infos">
                             <h2>Réservation</h2>
                             <p><?= nl2br($datas['_reservation'][0]); ?></p>
                         </div>
+
+                        <div class="clear"></div>
+
                     </div>
                 </div>
             </section>
-            <div class="clear"></div>
 
             <div class="block"></div>
         <?php }

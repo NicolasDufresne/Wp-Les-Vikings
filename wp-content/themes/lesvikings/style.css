@@ -654,17 +654,6 @@ body {
     width: 100%;
 }
 
-@media screen and (max-width: 1050px) {
-    #affiche-detail {
-        padding: 50px;
-        margin-top: 0;
-    }
-
-    #parallax-world-of-ugg h2 {
-        font-size: 48px;
-    }
-}
-
 @media screen and (max-width: 768px) {
     #parallax-world-of-ugg h2 {
         font-size: 25px;
@@ -773,7 +762,6 @@ body {
 }
 
 .columns img {
-    width: 200px;
     height: 80px;
 }
 
@@ -1123,16 +1111,9 @@ body {
     font-size: 1.5em;
 }
 
-.infos-affiches {
-    width: 25%;
-    float: right;
-    text-align: left;
-    padding-left: 50px;
-}
-
 #affiche-detail img {
-    float: left;
-    width: 30%;
+    width: 85%;
+    height: auto;
 }
 
 .infos-affiches h2 {
@@ -1140,6 +1121,7 @@ body {
     font-weight: bold;
     text-align: left;
     text-transform: uppercase;
+    margin-top: 50px;
 }
 
 .infos-affiches p {
@@ -1154,14 +1136,12 @@ body {
 }
 
 .description {
-    width: 45%;
-    float: left;
-    padding-left: 50px;
+    width: 60%;
+    display: inline-block;
 }
 
 .description h2 {
     font-size: 2.5em;
-    color: white;
     text-align: center;
     text-transform: uppercase;
 }
@@ -1189,18 +1169,6 @@ body {
         text-align: center;
         padding-left: 0;
     }
-
-    .description h2 {
-        font-size: 1.8em
-    }
-
-    #affiche-detail img {
-        width: 60%;
-        float: none;
-        margin: 0 auto;
-        margin-left: 20%;
-    }
-
     .description {
         float: none;
         width: 100%;
@@ -1211,19 +1179,6 @@ body {
 
     .infos-affiches h2 {
         text-align: center;
-    }
-}
-
-@media screen and (max-width: 414px) {
-    #affiche-detail img {
-        width: 80%;
-        float: none;
-        margin: 0 auto;
-        margin-left: 10%;
-    }
-
-    .txt {
-        width: 100%;
     }
 }
 
@@ -1536,4 +1491,95 @@ th {
 
 .important h1 {
     font-size: 1.5rem;
+}
+
+.site-map {
+    padding: 50px 0;
+    font-size: 1.5rem;
+}
+
+.site-map ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+.site-map .sitemap > li > ul {
+    margin-top: 1.5rem;
+}
+
+.site-map ul {
+    list-style: none;
+}
+
+.site-map ul li {
+    line-height: 1.5rem;
+    vertical-align: top;
+    position: relative;
+}
+
+.site-map ul li a {
+    text-decoration: none;
+    display: inline-block;
+    color: #333333;
+    padding: 5px 0;
+}
+
+.subtitle-sitemap {
+    font-weight: bold;
+}
+
+.site-map ul ul {
+    margin-left: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.site-map ul ul li {
+    position: relative;
+}
+
+.site-map ul ul li::before {
+    content: "";
+    display: inline-block;
+    width: 3rem;
+    height: 100%;
+    border-left: 1px #ccc solid;
+    position: absolute;
+    top: -0.75rem;
+}
+
+.site-map ul ul li::before {
+    content: "";
+    display: inline-block;
+    width: 3rem;
+    height: 1.5rem;
+    border-bottom: 1px #ccc solid;
+    position: absolute;
+    top: -0.75rem;
+}
+
+.site-map ul ul li a {
+    margin-left: 3.75rem;
+}
+
+.affiche-details {
+    width: 30%;
+    display: inline-block;
+}
+
+.infos {
+    width: 33.33333333333333333333333%;
+    float: left;
+}
+
+
+@media screen and (max-width: 640px) {
+    .infos {
+        width: 100%;
+        display: block;
+        float: none;
+    }
+
+    .affiche-details {
+        width: 100%;
+    }
 }

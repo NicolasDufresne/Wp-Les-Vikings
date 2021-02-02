@@ -15,8 +15,7 @@
     <section id="footer">
         <div class="columns wow animate__fadeIn" data-wow-duration="1s" data-wow-delay="0.3s">
             <a href="https://www.yvetot.fr" onclick="window.open(this.href);return false">
-                <img src="<?= get_template_directory_uri() . '/assets/img/partenaires/yvetot.png'; ?>" alt="yvetot"
-                     width="300" height="60"></a>
+                <img src="<?= get_template_directory_uri() . '/assets/img/logo/logo.png'; ?>" alt="yvetot"></a>
         </div>
         <div class="columns wow animate__fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
             <h3>Adresse</h3>
@@ -47,6 +46,8 @@
                 <li><a href="<?= esc_url(home_url('nous-contacter')); ?>">Nous contacter</a></li>
                 <li><a href="<?= esc_url(home_url('mentions-legales')); ?>">Mentions légales</a></li>
                 <li><a href="<?= esc_url(home_url('politique-de-confidentialite')); ?>">Politique de confidentialité</a></li>
+                <li><a href="<?= esc_url(home_url('plan-du-site'));?>">Plan du site</a></li>
+                <li><a href=""></a></li>
             </ul>
         </div>
 

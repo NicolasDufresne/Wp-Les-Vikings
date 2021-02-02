@@ -15,6 +15,23 @@ delete_expired_coupons_callback();
         </div>
     </div>
 
+    <section id="modalites">
+        <div class="wrap">
+            <h1 class="wow animate__fadeInDown" data-wow-delay="0.15s">Actualité</h1>
+            <div class="block"></div>
+                <p style="font-style: italic; font-size: 1.5rem">Message à nos spectateurs, <br>
+
+                    Nous ne connaissons pas à ce jour la date de la réouverture de la salle. <br>
+
+                    Nous travaillons pour vous accueillir dès que cela sera possible.<br>
+                    Les spectacles programmés sont pour certains reportés à des dates ultérieures, et pour d’autres annulés .<br>
+
+                    Merci de votre compréhension et de votre patience.<br>
+                    Vous pouvez nous joindre par mail <a href="mailto:saison.culturelle@yvetot.fr">saison.culturelle@yvetot.fr</a> ou par téléphone au 02 35 95 15 46<br>
+                    Nous sommes impatients de vous retrouver !</p>
+        </div>
+    </section>
+
 
     <section id="programmation">
         <div class="block"></div>
