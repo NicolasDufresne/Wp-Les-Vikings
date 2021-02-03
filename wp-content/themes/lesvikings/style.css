@@ -1,4 +1,4 @@
-/*!
+/*/
 Theme Name: lesvikings
 Theme URI: http://underscores.me/
 Author: Underscores.me
@@ -140,7 +140,7 @@ body {
 }
 
 .isAdmin a:hover {
-    color: #1dcaff;
+    color: #e6362b;
     -webkit-transition: all 0.4s ease;
     transition: all 0.4s ease;
 }
@@ -228,7 +228,7 @@ body {
 #mainnav ul li a:after {
     display: block;
     content: '';
-    border-bottom: solid 2px #1dcaff;
+    border-bottom: solid 2px #e6362b;
     transform: scaleX(0);
     transition: transform 250ms ease-in-out;
     width: 40px;
@@ -237,7 +237,7 @@ body {
 }
 
 #mainnav ul li a:hover {
-    color: #1dcaff;
+    color: #e6362b;
     -webkit-transition: all 0.4s ease;
     transition: all 0.4s ease;
 }
@@ -328,7 +328,7 @@ body {
 }
 
 .active {
-    color: #1dcaff;
+    color: #e6362b;
 }
 
 @media all and (max-width: 768px) {
@@ -387,7 +387,7 @@ body {
 }
 
 #programmation-vikings img:hover {
-    border: 2px solid #1dcaff;
+    border: 2px solid #e6362b;
     -webkit-transition: all 0.4s ease;
     transition: all 0.4s ease;
 }
@@ -771,7 +771,7 @@ body {
 }
 
 .columns a:hover {
-    color: #1dcaff;
+    color: #e6362b;
     -webkit-transition: all 0.4s ease;
     transition: all 0.4s ease;
 }
@@ -802,7 +802,7 @@ body {
 }
 
 .copyright a:hover {
-    color: #1dcaff;
+    color: #e6362b;
     -webkit-transition: all 0.4s ease;
     transition: all 0.4s ease;
 }
@@ -1009,7 +1009,7 @@ body {
 }
 
 #livret img:hover {
-    border: 2px solid #1dcaff;
+    border: 2px solid #e6362b;
     -webkit-transition: all 0.4s ease;
     transition: all 0.4s ease;
 }
@@ -1049,7 +1049,7 @@ body {
 }
 
 .container img:hover {
-    border: 2px solid #1dcaff;
+    border: 2px solid #e6362b;
     -webkit-transition: all 0.4s ease;
     transition: all 0.4s ease;
 }
@@ -1064,7 +1064,7 @@ body {
 }
 
 .container-materiels img:hover {
-    border: 2px solid #1dcaff;
+    border: 2px solid #e6362b;
     -webkit-transition: all 0.4s ease;
     transition: all 0.4s ease;
 }
@@ -1260,7 +1260,7 @@ select {
 
 input:focus,
 textarea:focus {
-    border: solid 2px #1dcaff;
+    border: solid 2px #e6362b;
 }
 
 textarea {
@@ -1280,7 +1280,7 @@ textarea {
 .main-form input[type="submit"] {
     display: block;
     padding: 10px;
-    background: #1dcaff;
+    background: #e6362b;
     border: 0;
     border-radius: 3px;
     font-weight: bold;
@@ -1296,7 +1296,7 @@ textarea {
 .input-bttn input[type="submit"] {
     display: block;
     padding: 5px;
-    background: #1dcaff;
+    background: #e6362b;
     border: 0;
     border-radius: 3px;
     font-weight: bold;
@@ -1311,7 +1311,7 @@ textarea {
 .input-bbtn {
     display: block;
     padding: 10px;
-    background: #1dcaff;
+    background: #e6362b;
     border: 0;
     border-radius: 3px;
     font-weight: bold;
@@ -1355,7 +1355,7 @@ a {
 }
 
 a:hover {
-    color: #1dcaff;
+    color: #e6362b;
     text-decoration: none;
     -webkit-transition: all 0.4s ease;
     transition: all 0.4s ease;
@@ -1446,7 +1446,7 @@ th {
 }
 
 .p {
-    background-color: #1dcaff;
+    background-color: #e6362b;
     color: white;
     padding: 7px 0 7px 7px;
     border-radius: 5px;
