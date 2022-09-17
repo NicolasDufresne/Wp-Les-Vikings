@@ -50,6 +50,9 @@ delete_expired_coupons_callback();
                 while ($query_affiches->have_posts()) {
                     $query_affiches->the_post();
                     $datas = get_post_meta(get_the_ID());
+                    echo '<pre>';
+                    var_dump($datas);
+                    echo '<pre>';
                     array_push($datas, get_permalink());
                     array_push($newtab, $datas);
                 }
@@ -61,7 +64,11 @@ delete_expired_coupons_callback();
 
                 usort($newtab, orderByDate(['_date'][0]));
 
-                foreach ($newtab as $data) {?>
+                foreach ($newtab as $data) {
+
+                    var_dump($newtab);
+
+                    ?>
 
                     <div class="affiches">
                         <a href="<?= $data[0]; ?>">

@@ -1,20 +1,20 @@
 <?php
 
-$work = new Cuztom_post_type('Spectacles', [
-    'menu_position' => 1,
-    'menu_icon' => 'dashicons-tickets-alt',
+$work = new Cuztom_post_type('Spectacles', [    //Création d'une catégorie Spectacles
+    'menu_position' => 1,                             //Position du menu
+    'menu_icon' => 'dashicons-tickets-alt',           //Icon du menu récupéré sur les dashicon de wordpress.org
 ]);
 
 $value = get_permalink();
 
 $work->add_meta_box(
     'cuztom-spectacles',
-    'Spectacles',
+    'Spectacles',                                 //Titre de la catégorie
 
     array(
         array(
             'id' => '_titre',
-            'type' => 'text',
+            'type' => 'text',                          //Ajout d'un champ text nommé titre pour le titre du spectacles
             'label' => 'Titre',
             'description' => 'Ajouter une titre',
             'explanation'           => __('Ce texte apparaîtra sous l\'image. Les majuscules seront gérées automatiquement.'),
